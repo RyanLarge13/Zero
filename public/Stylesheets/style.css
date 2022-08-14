@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DynaPuff', cursive;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    background-color: #000;
+}
+
+header p {
+    color: #fff;
+    font-size: 2em;
+}
+
+header p:hover {
+    transform: scale(1.1);
+    color: #ff0000;
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    25% {
+        transform: rotateY(-5deg);
+    }
+    40% {
+        transform: rotateZ(5deg);
+    }
+    55% {
+        transform: rotateZ(-3deg);
+    }
+    90% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header li {
+    margin: .25em .5em;
+    list-style-type: none;
+}
+
+header a {
+    padding: .5em 1em;
+    text-decoration: none;
+    color: #fff;
+    transition: 250ms ease-in-out;
+    background-image: linear-gradient(45deg, #fff, #fff);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+}
+
+header a:hover {
+    color: #ff0000;
+    background-size: 100% 3px;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    background-color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
