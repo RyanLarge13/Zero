@@ -159,6 +159,14 @@ footer {
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
+    * {
+      /*outline: 1px solid red;*/
+    }
+    
+    body {
+      background-position: center;
+      z-index: -1;
+    }
 
     nav {
         position: fixed;
@@ -239,7 +247,21 @@ footer {
     }
 
     .container {
-        z-index: -1;
+        z-index: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    .container ul {
+      display: flex;
+      flex-direction: column;
+      transform: rotateY(0deg), perspective(0);
+      z-index: -1;
+    }
+    
+    .container a {
+      background-color: #fff;
     }
 
     .license {

@@ -1,0 +1,27 @@
+{
+  "name": "zero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanLarge13/Zero.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanLarge13/Zero/issues"
+  },
+  "homepage": "https://github.com/RyanLarge13/Zero#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
