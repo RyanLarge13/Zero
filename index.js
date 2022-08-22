@@ -1,30 +1,32 @@
-const express = require('express'), path = require('path');
+const express = require('express');
+const path = require('path');
 const app = express();
 
-app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.use(express.static('views'));
 
 app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname + '/public/HTML/home.html'));
+   res.render('HTML/home');
 });
 
 app.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/HTML/home.html'));
+    res.render('HTML/home');
 });
 
 app.get('/tees', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/HTML/tees.html'));
+    res.render('HTML/tees');
 });
 
 app.get('/sweaters', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/HTML/sweaters.html'));
+    res.render('HTML/sweaters');
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/HTML/contact.html'));
+    res.render('HTML/contact');
 });
 
 app.get('/specials', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/HTML/specials.html'));
+    res.render('HTML/specials');
 });
 
 app.listen(8080, () => console.log('Your app is running on port 8080'));

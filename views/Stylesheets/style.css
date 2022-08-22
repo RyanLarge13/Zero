@@ -11,6 +11,7 @@ body {
     background-position: -40em 40%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
@@ -22,6 +23,7 @@ header {
     width: 100%;
     height: 10%;
     background-color: #000;
+    box-shadow: 0 .1em .5em 0 #ff0000;
 }
 
 header img {
@@ -53,7 +55,7 @@ header a {
     text-decoration: none;
     color: #fff;
     transition: 250ms ease-in-out;
-    background-image: linear-gradient(45deg, #fff, #fff);
+    background-image: linear-gradient(45deg, rgba(241, 28, 28, 0.74), rgb(73, 201, 224));
     background-repeat: no-repeat;
     background-size: 0% 3px;
     background-position: left bottom;
@@ -80,7 +82,7 @@ header a:hover {
 .container ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    transform: rotateY(-50deg) perspective(1px) translateX(10em);
+    transform: rotateY(-50deg);
 }
 
 .container li:nth-child(1) {
@@ -104,10 +106,11 @@ header a:hover {
     padding: .75em 1.75em;
     font-size: 2em;
     border: 1px solid black;
-    border-radius: 1em;
+    border-radius: .25em;
     box-shadow: .25em .25em .3em 0 #000;
     transition: 250ms ease-in-out;
     color: #000;
+    background-image: linear-gradient(45deg, rgb(35, 221, 235), rgb(224, 34, 34));
 }
 
 .container li:hover {
