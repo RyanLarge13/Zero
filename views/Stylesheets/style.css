@@ -109,8 +109,8 @@ header a:hover {
     border-radius: .25em;
     box-shadow: .25em .25em .3em 0 #000;
     transition: 250ms ease-in-out;
-    color: #000;
-    background-image: linear-gradient(45deg, rgb(35, 221, 235), rgb(224, 34, 34));
+    color: #fff;
+    background-color: #000;
 }
 
 .container li:hover {
@@ -131,6 +131,7 @@ footer {
     bottom: 0;
     background-color: #000;
     color: #fff;
+    box-shadow: 0 -.1em .5em 0 #ff0000;
 }
 
 .social {
@@ -164,7 +165,7 @@ footer {
 @media (min-width: 300px) and (max-width: 900px) {
     
     body {
-      background: none;
+      background-image: linear-gradient(45deg, #fc354c, #0abfbc);
     }
 
     header {
@@ -249,10 +250,6 @@ footer {
     }
 
     .sec-1 {
-        background-image: url(../Images/zero-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
 
     .container {
@@ -277,10 +274,10 @@ footer {
     }
     
     .container a {
-      background-color: #fff;
       padding: .5em 1em;
-      border-radius: .1em;
+      border-radius: .25em;
       font-size: 1.2em;
+      outline: 1px solid #fff;
     }
 
     .license {
