@@ -21,7 +21,7 @@ header {
     align-items: center;
     padding: 1em;
     width: 100%;
-    height: 10%;
+    height: 8%;
     background-color: #000;
     box-shadow: 0 .1em .5em 0 #ff0000;
 }
@@ -42,7 +42,7 @@ header ul {
 }
 
 header li {
-    margin: .25em .5em;
+    margin: .25em .75em;
     list-style-type: none;
 }
 
@@ -51,9 +51,11 @@ header li {
 }
 
 header a {
-    padding: .5em 1em;
+    font-size: .75em;
+    padding: .3em .75em;
     text-decoration: none;
     color: #fff;
+    border-radius: 1em;
     transition: 250ms ease-in-out;
     background-image: linear-gradient(45deg, rgba(241, 28, 28, 0.74), rgb(73, 201, 224));
     background-repeat: no-repeat;
@@ -65,9 +67,25 @@ header a:hover {
     background-size: 100% 3px;
 }
 
-.sec-1 {
-    width: 100vw;
+.sec {
     height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, transparent 40%, #11eeee);
+}
+
+.sec-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-1 h1 {
+    font-size: 4em;
+    letter-spacing: .1em;
+    transition: 750ms ease-in-out;
+}
+
+.sec-2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -77,6 +95,7 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .container ul {
@@ -119,6 +138,9 @@ header a:hover {
 
 .container li:hover a {
     box-shadow: .4em .4em .5em 0 #000;
+    background-color: #fff;
+    color: #000;
+    transform: translateX(-1em);
 }
 
 footer {
@@ -141,7 +163,8 @@ footer {
 }
 
 .social i {
-    font-size: 2em;
+    font-size: 1.5em;
+    margin: 0 .25em;
     padding: .5em 1em;
     transition: 250ms ease-in-out;
     cursor: pointer;
@@ -247,9 +270,6 @@ footer {
     span:nth-child(3).nav {
         bottom: 50%;
         transform: translateY(50%) rotateZ(45deg);
-    }
-
-    .sec-1 {
     }
 
     .container {
