@@ -80,11 +80,23 @@ header a:hover {
     align-items: center;
 }
 
+.abs {
+    position: absolute;
+    transition: 750ms ease-in-out;
+}
+
 .sec-1 h1 {
     position: relative;
     font-size: 5em;
     letter-spacing: .1em;
-    transition: 750ms ease-in-out;
+}
+
+.sec-1 h2 {
+    opacity: 0;
+}
+
+.sec-1 h3 {
+    opacity: 0;
 }
 
 footer {
