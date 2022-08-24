@@ -7,7 +7,6 @@ const sec2 = document.querySelector(".sec-2");
 const h1 = document.querySelector('.sec-1 h1');
 const h2 = document.querySelector(".sec-1 h2");
 const h3 = document.querySelector(".sec-1 h3");
-const secs = document.querySelectorAll('.sec');
 let count = 0;
 
 //mobile hamburger menu

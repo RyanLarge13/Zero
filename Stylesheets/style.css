@@ -80,6 +80,7 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 100%;
 }
 
 .abs {
@@ -104,14 +105,24 @@ header a:hover {
     color: #fff;
 }
 
+/* Design elemnts for section 2 */
+
+.blur-purple {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: purple;
+    filter: blur(1px);
+}
+
 .sec-2 {
-    /* display: none; */
-    justify-content: space-around;
+    display: none;
+    justify-content: center;
     align-items: center;
 }
 
 .sec-2 p {
-    opacity: 0;
+    opacity: 1;
     color: #fff;
 }
 
