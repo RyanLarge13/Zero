@@ -54,7 +54,7 @@ const check = () => {
 setInterval(() => {
     count++;
     check();
-}, 4000);
+}, 3250);
 
 //event listeners
 navToggle.addEventListener('click', toggleNav);
