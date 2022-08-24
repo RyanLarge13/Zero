@@ -1,3 +1,4 @@
+//variables
 const lines = document.querySelectorAll('span');
 const navToggle = document.querySelector('.toggle');
 const navigation = document.querySelector('nav');
@@ -26,15 +27,5 @@ class Opacity {
     }
 };
 
-const scroll = () => {
-    let scrollY = window.scrollY;
-    bgImage = 'linear-gradient(to right, transparent 40%, #ff0000';
-    if (scrollY > 50) {
-        headingOff = new Opacity(h1).off();
-    } else {
-        headingOn = new Opacity(h1).on();
-    }
-};
-
+//event listeners
 navToggle.addEventListener('click', toggleNav);
-window.addEventListener('scroll', scroll);
