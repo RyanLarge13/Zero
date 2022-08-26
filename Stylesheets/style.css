@@ -154,6 +154,30 @@ header a:hover {
     transform: scale(1.5) translateX(-2.5em);
 }
 
+.sec-2 i {
+    color: white;
+    font-size: 1.5em;
+    transition: 250ms ease-in-out;
+}
+
+.sec-2 i:hover {
+    color: #fc354c;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.fa-circle-right {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+.fa-circle-chevron-left {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+}
+
 footer {
     position: fixed;
     display: flex;
