@@ -54,6 +54,9 @@ const check = () => {
         setTimeout(() => {
             secOff = new Display(sec1).displayOff();
             secOn = new Display(sec2).displayOn();
+            setTimeout(() => {
+                secOn = new Display(sec2).on();
+            }, 250);
         }, 1000);
     }
 };

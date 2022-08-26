@@ -59,7 +59,7 @@ header a {
     color: #fff;
     border-radius: 1em;
     transition: 500ms ease-in-out;
-    background-image: linear-gradient(to right, #11eeee, #11eeee);
+    background-image: linear-gradient(to right, #ff0000, #ff0000);
     background-repeat: no-repeat;
     background-size: 0% 3px;
     background-position: left bottom;
@@ -72,8 +72,6 @@ header a:hover {
 .sec {
     height: 100vh;
     width: 100vw;
-    /* background-image: linear-gradient(to right, transparent 40%, #11eeee); */
-    /* background-color: #000; */
 }
 
 .sec-1 {
@@ -105,25 +103,55 @@ header a:hover {
     color: #fff;
 }
 
-/* Design elemnts for section 2 */
-
-.blur-purple {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    color: purple;
-    filter: blur(1px);
-}
-
 .sec-2 {
     display: none;
+    opacity: 0;
     justify-content: center;
     align-items: center;
+    transition: 750ms ease-in-out;
 }
 
-.sec-2 p {
-    opacity: 1;
-    color: #fff;
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 45%;
+    transform: perspective(50em) rotateY(30deg);
+}
+
+.text-content h2 {
+    font-size: 3em;
+    font-weight: 600;
+    color: white;
+}
+
+.text-content p {
+    display: block;
+    margin: 1em 0;
+    width: 75%;
+    color: white;
+}
+
+.text-content button {
+    padding: .5em 1em;
+    border-radius: .5em;
+    border: none;
+    outline: none;
+    background-color: #00fff2e7;
+    font-weight: 600;
+    color: #000;
+    transition: 250ms ease-in-out;
+}
+
+.text-content button:hover {
+    cursor: pointer;
+    background-color: #fc354c;
+    transform: scale(1.05) translateX(-.5em);
+}
+
+.sec-2 img {
+    transform: scale(1.5) translateX(-2.5em);
 }
 
 footer {
@@ -136,7 +164,6 @@ footer {
     bottom: 0;
     background-color: #000;
     color: #fff;
-    /* box-shadow: 0 -.1em .5em 0 #ff0000; */
 }
 
 .social {
