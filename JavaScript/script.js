@@ -97,7 +97,7 @@ const killSec1 = () => {
 };
 
 const resetStyle = (secArray) => {
-    navDots.forEach(dot => dot.style.backgroundColor = '#0abfbc');
+    navDots.forEach(dot => dot.style.backgroundColor = '#fff');
     secArray.forEach(section => allSecs = new Display(section).off());
     setTimeout(() => {
         secArray.forEach(section => allSecs = new Display(section).displayOff());
@@ -117,6 +117,14 @@ const showNextSec = () => {
 };
 
 const turnPage = (direction) => {
+    if (direction === 'right' && navCount === 2) {
+        navCount = 0;
+        return showNextSec(navCount);
+    }
+    if (direction === 'left' && navCount === 0) {
+        navCount = 2;
+        return showNextSec(navCount);
+    }
     if (direction === 'right' && navCount !== 2) {
         navCount++;
         showNextSec(navCount);

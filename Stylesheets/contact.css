@@ -69,6 +69,74 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+label {
+    color: #fff;
+    margin-bottom: .25em;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .25em .5em;
+    height: 3em;
+    border: none;
+    outline: none;
+    transition: 250ms ease-in-out;
+}
+
+input:focus {
+    outline: 2px solid #0abfbc;
+}
+
+input:hover {
+    outline: 2px solid #0abfbc;
+}
+
+textarea {
+    width: 100%;
+    transition: 250ms ease-in-out;
+    padding: .5em;
+}
+
+textarea:hover {
+    outline: 2px solid #0abfbc;
+}
+
+textarea:focus {
+    outline: 2px solid #0abfbc;
+}
+
+button {
+    margin-top: 1em;
+    padding: .5em 1em;
+    border-radius: .5em;
+    transition: 250ms ease-in-out;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    background-color: #0abfbc;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 footer {
     position: fixed;
     display: flex;
