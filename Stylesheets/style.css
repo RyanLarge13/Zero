@@ -341,10 +341,13 @@ main i:hover {
     border-radius: 50%;
     background-position: center;
     background-size: cover;
+    box-shadow: 0 0 .75em 0 #fff;
+    transition: 250ms ease-in-out;
 }
 
 .bubble:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .bubble1 {
