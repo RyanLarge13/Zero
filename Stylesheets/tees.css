@@ -56,7 +56,7 @@ header a {
     color: #fff;
     border-radius: 1em;
     transition: 500ms ease-in-out;
-    background-image: linear-gradient(to right, #11eeee, #11eeee);
+    background-image: linear-gradient(to right, #fc354c, #fc354c);
     background-repeat: no-repeat;
     background-size: 0% 3px;
     background-position: left bottom;
@@ -64,6 +64,10 @@ header a {
 
 header a:hover {
     background-size: 100% 3px;
+}
+
+.fa-cart-shopping {
+    color: #fff;
 }
 
 h1 {
@@ -79,20 +83,27 @@ aside {
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 10% 1em;
+    padding: 5% 1em;
     width: 10%;
-    height: 95%;
+    max-height: 95%;
+    overflow-y: auto;
     color: #fff;
-    background-color: rgb(7, 27, 26);
-    z-index: -1;
+    background-color: #000;
 }
 
-aside ul {
-
+aside::-webkit-scrollbar {
+    width: 2px;
 }
 
 aside ul li {
     list-style-type: none;
+    padding: 1em .25em;
+    border-bottom: 1px solid white;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li:hover {
+    border-bottom: 1px solid #11eeee;
 }
 
 aside ul li:hover {
@@ -101,6 +112,24 @@ aside ul li:hover {
 
 aside ul li ul {
     transform: scale(1, 0);
+    transform-origin: top;
+    opacity: 0;
+    position: absolute;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li ul.scale {
+    transform: scale(1, 1);
+    position: relative;
+}
+
+aside ul li ul li {
+    border-bottom: 1px solid #fc354c;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li ul li:hover {
+    border-bottom: 1px solid #11eeee;
 }
 
 .grid {
@@ -166,19 +195,16 @@ aside ul li ul {
     border-radius: .5em;
     transition: 250ms ease-in-out;
     box-shadow: 0 0 .5em 0 #fff;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
 }
 
 .foot button:hover {
     cursor: pointer;
     transform: scale(1.1);
-}
-
-.buy {
-    background-color: #11eeee;
-}
-
-.view {
-    background-color: #fc354c;
+    background-color: #fff;
+    color: #000;
 }
 
 footer {
@@ -191,7 +217,6 @@ footer {
     bottom: 0;
     background-color: #000;
     color: #fff;
-    /* box-shadow: 0 -.1em .5em 0 #ff0000; */
 }
 
 .social {

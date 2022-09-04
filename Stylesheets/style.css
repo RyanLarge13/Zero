@@ -71,6 +71,10 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+.fa-cart-shopping {
+    color: #fff;
+}
+
 .sec {
     height: 100vh;
     width: 100vw;

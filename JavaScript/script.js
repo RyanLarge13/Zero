@@ -25,6 +25,15 @@ const toggleNav = () => {
     navigation.classList.toggle('scale');
 };
 
+//localstorage variables and function to check weather or not someone has previously visited and to stop showing the welcome messages
+
+const visited = localStorage.getItem("has visited");
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (visited) {
+        killSec1();
+    }
+});
 
 //JS class allowing easy access and readability to changing elements display and opacity.
 class Display {
@@ -152,3 +161,5 @@ navDots.forEach((dot, index) => {
         showNextSec();
     });
 });
+
+localStorage.setItem("has visited", "true");

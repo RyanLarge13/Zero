@@ -69,6 +69,10 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+.fa-cart-shopping {
+    color: #fff;
+}
+
 footer {
     position: fixed;
     display: flex;
