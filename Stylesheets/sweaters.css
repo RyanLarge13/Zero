@@ -3,15 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto serif', cursive;
+    /* outline: 1px solid red; */
 }
 
 body {
     overflow-x: hidden;
-    /* background-image: url(../Images/zero-logo.jpg); */
-    /* background-position: -40em 38%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
     background-color: #000;
 }
 
@@ -23,8 +19,9 @@ header {
     padding: 1em;
     width: 100%;
     height: 8%;
+    top: 0;
     background-color: #000;
-    /* box-shadow: 0 .1em .5em 0 #ff0000; */
+    z-index: 999;
 }
 
 header img {
@@ -59,7 +56,7 @@ header a {
     color: #fff;
     border-radius: 1em;
     transition: 500ms ease-in-out;
-    background-image: linear-gradient(to right, #11eeee, #11eeee);
+    background-image: linear-gradient(to right, #fc354c, #fc354c);
     background-repeat: no-repeat;
     background-size: 0% 3px;
     background-position: left bottom;
@@ -69,8 +66,149 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+.home {
+    background-size: 100% 3px;
+}
+
 .fa-cart-shopping {
     color: #fff;
+}
+
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 5% 1em;
+    width: 10%;
+    max-height: 95%;
+    overflow-y: auto;
+    color: #fff;
+    background-color: #000;
+}
+
+aside::-webkit-scrollbar {
+    width: 2px;
+}
+
+aside ul li {
+    list-style-type: none;
+    padding: 1em .25em;
+    border-bottom: 1px solid white;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li:hover {
+    border-bottom: 1px solid #11eeee;
+}
+
+aside ul li:hover {
+    cursor: pointer;
+}
+
+aside ul li ul {
+    transform: scale(1, 0);
+    transform-origin: top;
+    opacity: 0;
+    position: absolute;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li ul.scale {
+    transform: scale(1, 1);
+    position: relative;
+}
+
+aside ul li ul li {
+    border-bottom: 1px solid #fc354c;
+    transition: 250ms ease-in-out;
+}
+
+aside ul li ul li:hover {
+    border-bottom: 1px solid #11eeee;
+}
+
+.grid {
+    margin-top: 5%;
+    height: 400vh;
+    width: 100vw;
+    padding: 10% 20%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em 0;
+}
+
+.card {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    transition: 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card:hover .foot {
+    transform: translateY(0);
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.card::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-image: url(https://img.freepik.com/free-photo/full-body-portrait-athletic-young-male-ripped-light-blue-jeans-blank-white-shortsleeve-t-shirt_346278-997.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.title {
+    padding: .5em;
+}
+
+.foot {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: 250ms ease-in-out;
+}
+
+.foot button {
+    width: 25%;
+    padding: .5em;
+    outline: none;
+    border: none;
+    border-radius: .5em;
+    transition: 250ms ease-in-out;
+    box-shadow: 0 0 .5em 0 #fff;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+}
+
+.foot button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #000;
 }
 
 footer {
@@ -83,7 +221,6 @@ footer {
     bottom: 0;
     background-color: #000;
     color: #fff;
-    /* box-shadow: 0 -.1em .5em 0 #ff0000; */
 }
 
 .social {
