@@ -3,16 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto serif', cursive;
-    color: white;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 body {
     overflow-x: hidden;
-    /* background-image: url(../Images/zero-logo.jpg); */
-    /* background-position: -40em 38%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
     background-color: #000;
 }
 
@@ -25,7 +23,7 @@ header {
     width: 100%;
     height: 8%;
     background-color: #000;
-    /* box-shadow: 0 .1em .5em 0 #ff0000; */
+    z-index: 999;
 }
 
 header img {
@@ -60,7 +58,7 @@ header a {
     color: #fff;
     border-radius: 1em;
     transition: 500ms ease-in-out;
-    background-image: linear-gradient(to right, #11eeee, #11eeee);
+    background-image: linear-gradient(to right, #ff0000, #ff0000);
     background-repeat: no-repeat;
     background-size: 0% 3px;
     background-position: left bottom;
@@ -70,13 +68,106 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+.cart {
+    position: relative;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .5em;
+}
+
+main {
+    width: 100vw;
+    height: fit-content;
+    padding: 5% 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
 .home {
     background-size: 100% 3px;
 }
 
 .product-container {
+    padding: 0 10em;
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em 7em;
+}
+
+.product {
+    position: relative;
     width: 100%;
-    height: 75%;
+    height: 50vh;
+    background-color: #fff;
+}
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.quantity button {
+    font-size: 1em;
+    font-weight: 600;
+    width: 2em;
+    height: 2em;
+    margin: 0 1em;
+}
+
+.up {
+    background-color: #11eeee;
+}
+
+.down {
+    background-color: #ff0000;
+}
+
+.danger {
+    padding: .5em 1em;
+    background-color: #ff0000;
+    border: none;
+    outline: none;
+}
+
+.checkout {
+    width: max-content;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #11eeee;
+    padding: .25em .75em;
+    font-weight: 600;
+    margin: 2.5em auto;
+    transition: 250ms ease-in-out;
+}
+
+.checkout:hover {
+    cursor: pointer;
+    color: #000;
 }
 
 .fa-cart-shopping {

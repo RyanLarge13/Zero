@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Stylesheets/cart.css">
     <script defer src="../JavaScript/cart.js"></script>
+    <script defer src="../JavaScript/products.js"></script>
     <script defer src="https://kit.fontawesome.com/a673862905.js" crossorigin="anonymous"></script>
     <title>Zero</title>
 </head>
@@ -31,7 +32,10 @@
                 <li><a href="tees.html">Tee's</a></li>
                 <li><a href="sweaters.html">Sweaters</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <a class="home" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div class="cart">
+                    <a class="home" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="indicator"></div>
+                </div>
             </ul>
         </nav>
     </header>
@@ -41,18 +45,56 @@
         <div class="product-container">
             <div class="product">
                 <div class="foot">
-                    <button>Delete</button>
                     <div class="quantity">
-                        <button>-</button>
-                        <h2>quantity</h2>
-                        <button>+</button>
+                        <button class="down">-</button>
+                        <h2>1</h2>
+                        <button class="up">+</button>
                     </div>
+                    <button class="danger">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="foot">
+                    <div class="quantity">
+                        <button class="down">-</button>
+                        <h2>1</h2>
+                        <button class="up">+</button>
+                    </div>
+                    <button class="danger">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="foot">
+                    <div class="quantity">
+                        <button class="down">-</button>
+                        <h2>1</h2>
+                        <button class="up">+</button>
+                    </div>
+                    <button class="danger">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="foot">
+                    <div class="quantity">
+                        <button class="down">-</button>
+                        <h2>1</h2>
+                        <button class="up">+</button>
+                    </div>
+                    <button class="danger">Delete</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="foot">
+                    <div class="quantity">
+                        <button class="down">-</button>
+                        <h2>1</h2>
+                        <button class="up">+</button>
+                    </div>
+                    <button class="danger">Delete</button>
                 </div>
             </div>
         </div>
-        <div class="buttons">
-            <button>Checkout</button>
-        </div>
+        <div class="checkout">Checkout</div>
     </main>
 
     <footer>

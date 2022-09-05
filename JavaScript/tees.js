@@ -1,8 +1,12 @@
+//imports
+import { products, indicate } from "./products.js";
+
 //variables
 const lines = document.querySelectorAll("span");
 const navToggle = document.querySelector(".toggle");
 const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll('aside ul li');
+const buyBtns = document.querySelectorAll('.buy');
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -27,6 +31,13 @@ const openNav = (e) => {
   }
 };
 
+//These functions add a product to an array
+const add = (e) => {
+  products.push(e.target);
+  indicate();
+};
+
 //event listeners
 navToggle.addEventListener("click", toggleNav);
 listParents.forEach((item) => item.addEventListener('click', openNav));
+buyBtns.forEach((btn) => btn.addEventListener('click', add));
