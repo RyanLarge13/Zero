@@ -4,6 +4,7 @@ const navToggle = document.querySelector(".toggle");
 const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll('aside ul li');
 const buyBtns = document.querySelectorAll('.buy');
+const indicator = document.querySelector('.indicator');
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -32,7 +33,12 @@ const openNav = (e) => {
 const add = (e) => {
   const title = e.target.parentElement.previousElementSibling.innerHTML;
   const format = title.replace(' ', '').toLowerCase();
-  localStorage.setItem('item', format);
+  localStorage.setItem(title, format);
+  indicate();
+};
+
+const indicate = () => {
+  indicator.innerHTML = localStorage.length;
 };
 
 //event listeners

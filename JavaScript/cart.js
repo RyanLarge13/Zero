@@ -27,9 +27,7 @@ const clearCart = () => {
 
 //cart items count indicator function
 const indicate = () => {
-  const items = localStorage.getItem("item");
-  products.push(items);
-  indicator.innerHTML = products.length;
+  indicator.innerHTML = localStorage.length;
 };
 
 //beginning of the product display
@@ -65,9 +63,12 @@ const append = (elementArray) => {
 
 //showing all products
 const showProducts = () => {
-  const items = localStorage.getItem('item');
-  if (!items) return;
-  products.push(items);
+  let keys = Object.keys(localStorage);
+  for (let k = 0; k < localStorage.length; k++) {
+    if (localStorage.getItem(keys[k]) === 'true') continue;
+    products.push(localStorage.getItem(keys[k]));
+  }
+  console.log(products)
   products.forEach((item) => {
     createElements();
   });
