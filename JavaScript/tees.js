@@ -1,6 +1,3 @@
-//imports
-import { products, indicate } from "./products.js";
-
 //variables
 const lines = document.querySelectorAll("span");
 const navToggle = document.querySelector(".toggle");
@@ -33,8 +30,9 @@ const openNav = (e) => {
 
 //These functions add a product to an array
 const add = (e) => {
-  products.push(e.target);
-  indicate();
+  const title = e.target.parentElement.previousElementSibling.innerHTML;
+  const format = title.replace(' ', '').toLowerCase();
+  localStorage.setItem('item', format);
 };
 
 //event listeners
