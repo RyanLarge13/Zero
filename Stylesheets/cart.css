@@ -362,6 +362,32 @@ footer {
         bottom: 50%;
         transform: translateY(50%) rotateZ(45deg);
     }
+    
+    main {
+    	max-height: 100vh;
+    }
+    
+   .product-container {
+   	min-height: 100vh;
+   	overflow-x: hidden;
+   	display: flex;
+   	flex-direction: column;
+   	justify-content: center;
+   	align-items: center;
+   	padding: 10% 0;
+   }
+   
+  .product {
+  	width: 75vw;
+  	min-height: 45vh;
+  }
+  
+ .checkout-clear {
+ 	position: unset;
+ 	width: 100vw;
+ 	max-height: 15%;
+ 	background-color: #000;
+ }
 
     .license {
         display: none;

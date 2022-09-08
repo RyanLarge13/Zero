@@ -11,6 +11,7 @@ const alert = document.querySelector('.alert');
 const closeBtn = document.querySelector('.close');
 const shade = document.querySelector('.shade');
 let products = [];
+let quantityAmount = 0;
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -30,14 +31,32 @@ const clearCart = () => {
   window.location.reload();
 };
 
+//product functionality functions
+const inc = (elem) => {
+	quantityAmount++;
+	elem.innerHTML = quantityAmount;
+};
+
+const dec = (elem) => {
+	if (quantityAmount === 0) return;
+	quantityAmount--;
+	elem.innerHTML = quantityAmount;
+};
+
+const removeProduct = () => {
+	
+};
+
 //beginning of the product display
 const createElements = () => {
+	//element creation
   const product = document.createElement("div");
   const foot = document.createElement("div");
   const quantity = document.createElement("div");
   const up = document.createElement("button");
   const down = document.createElement("button");
   const danger = document.createElement("button");
+  //classname assignment 
   const count = document.createElement("h2");
   danger.className = "danger";
   down.className = "down";
@@ -45,6 +64,20 @@ const createElements = () => {
   quantity.className = "quantity";
   foot.className = "foot";
   product.className = "product";
+  //inner text assignment
+  up.innerHTML = '+';
+  down.innerHTML = '-';
+  danger.innerHTML = 'Clear';
+  quantity.innerHTML = quantityAmount;
+  //Event listeners to single product functionality in cart. 
+  up.addEventListener('click', () => {
+  	inc(quantity);
+  });
+  down.addEventListener('click', () => {
+  	dec(quantity);
+  });
+  danger.addEventListener('click', removeProduct);
+  //adding elements to an array
   const component = [product, foot, quantity, up, down, count, danger];
   append(component);
 };
@@ -107,6 +140,7 @@ const closeAlert = () => {
 };
 
 showProducts();
+console.log(products)
 
 //event listeners
 navToggle.addEventListener('click', toggleNav);

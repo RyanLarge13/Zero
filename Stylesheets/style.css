@@ -463,10 +463,6 @@ footer {
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
-    
-    body {
-      background-image: linear-gradient(45deg, #fc354c, #0abfbc);
-    }
 
     header {
         z-index: 999;
@@ -548,8 +544,72 @@ footer {
         bottom: 50%;
         transform: translateY(50%) rotateZ(45deg);
     }
+    
+   .sec-2 {
+   	flex-direction: column;
+   	text-align: center;
+   	justify-content: flex-start;
+   	align-items: center;
+   	height: 100vh;
+   	width: 100vw;
+   	padding-top: 25%;
+   }
+   
+  .sec-2 h2 {
+  	font-size: 1.5em;
+  }
+   
+  .sec-2 p {
+  	font-size:. 5em;
+  }
+   
+  .sec-2 img {
+  	position: absolute;
+  	bottom: 25%;
+  	left: 50%;
+  	transform: translateX(-50%);
+  }
+    
+   .text-content {
+   	display: flex;
+   	flex-direction: column;
+   	justify-content: center;
+   	align-items: center;
+   	transform: rotateY(0) rotateX(25deg);
+   	height: 40%;
+   	width: 100%;
+   }
+   
+  .grid {
+  	grid-template-columns: 1fr;
+  	gap: 5em;
+  	margin-top: -25%;
+  	min-height: 65vh;
+  	overflow-y: auto;
+  }
+  
+ .card {
+ 	min-height: 25vh;
+ }
+ 
+.buttons {
+	flex-direction: column;
+}
+
+.buttons button {
+	margin-top: 1em;
+}
+
+.bubble {
+	transform: translateY(-200%);
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+}
 
     .license {
         display: none;
     }
-}
+}l
