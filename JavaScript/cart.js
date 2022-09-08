@@ -6,6 +6,10 @@ const clearCartBtn = document.querySelector('.clear-cart');
 const indicator = document.querySelector(".indicator");
 const shopingCartIcon = document.querySelector(".fa-cart-shopping");
 const container = document.querySelector(".product-container");
+const checkout = document.querySelector(".checkout");
+const alert = document.querySelector('.alert');
+const closeBtn = document.querySelector('.close');
+const shade = document.querySelector('.shade');
 let products = [];
 
 //mobile hamburger menu
@@ -17,17 +21,13 @@ const toggleNav = () => {
 //clearing the cart and local storage functions
 const clearStorage = () => {
   localStorage.clear();
+  localStorage.setItem("has visited", "true");
   clearCart();
 };
 
 const clearCart = () => {
   products = [];
   window.location.reload();
-};
-
-//cart items count indicator function
-const indicate = () => {
-  indicator.innerHTML = localStorage.length;
 };
 
 //beginning of the product display
@@ -68,15 +68,47 @@ const showProducts = () => {
     if (localStorage.getItem(keys[k]) === 'true') continue;
     products.push(localStorage.getItem(keys[k]));
   }
-  console.log(products)
+  indicate();
   products.forEach((item) => {
     createElements();
   });
 };
 
-indicate();
+//cart items count indicator function
+const indicate = () => {
+  const numOfProducts = products.length;
+  indicator.innerHTML = numOfProducts;
+  if (numOfProducts === 0) showEmpty();
+};
+
+const showEmpty = () => {
+  const empty = document.createElement('h1');
+  empty.innerHTML = 'Your cart is empty..'
+  empty.className = 'empty';
+  document.body.appendChild(empty);
+};
+
+//handling checkout
+const checkOut = () => {
+  if (products.length === 0) {
+    alert.style.transform = 'translate(-50%, 0)';
+    shade.style.opacity = '1';
+  } 
+  else {
+    window.location = '../HTML/checkout.html';
+  }
+  closeBtn.addEventListener('click', closeAlert);
+};
+
+const closeAlert = () => {
+  alert.style.transform = 'translate(-50%, -200%)';
+  shade.style.opacity = "0";
+
+};
+
 showProducts();
 
 //event listeners
 navToggle.addEventListener('click', toggleNav);
 clearCartBtn.addEventListener('click', clearStorage);
+checkout.addEventListener("click", checkOut);
