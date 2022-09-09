@@ -8,11 +8,6 @@
 
 body {
     overflow-x: hidden;
-    /* background-image: url(../Images/zero-logo.jpg); */
-    /* background-position: -40em 38%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
     background-color: #000;
 }
 
@@ -26,7 +21,6 @@ header {
     height: 8%;
     background-color: #000;
     z-index: 999;
-    /* box-shadow: 0 .1em .5em 0 #ff0000; */
 }
 
 header img {
@@ -545,6 +539,15 @@ footer {
         transform: translateY(50%) rotateZ(45deg);
     }
     
+   .sec-1 {
+   	width: 100vw;
+   	text-align: center;
+   }
+    
+   .sec-1 h1 {
+   	font-size: 2.5em;
+   }
+    
    .sec-2 {
    	flex-direction: column;
    	text-align: center;
@@ -602,6 +605,7 @@ footer {
 
 .bubble {
 	transform: translateY(-200%);
+	scale: .75;
 }
 
 .dot {

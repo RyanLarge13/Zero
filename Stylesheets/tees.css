@@ -365,9 +365,13 @@ footer {
    	grid-template-columns: 1fr;
    }
    
+  .title {
+  	font-size: .6em;
+  }
+   
    aside {
    	margin-top: 15%;
-   	width: 25vw;
+   	width: 22.5vw;
    }
 
     .license {
