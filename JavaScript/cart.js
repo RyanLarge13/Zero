@@ -65,8 +65,8 @@ const createElements = () => {
   foot.className = "foot";
   product.className = "product";
   //inner text assignment
-  up.innerHTML = '+';
-  down.innerHTML = '-';
+  up.innerText = '+';
+  down.innerText = '-';
   danger.innerHTML = 'Clear';
   quantity.innerHTML = quantityAmount;
   //Event listeners to single product functionality in cart. 

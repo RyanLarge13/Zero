@@ -147,16 +147,20 @@ textarea:focus {
 }
 
 button {
+    background-color: #000;
+    color: #fff;
     margin-top: 1em;
     padding: .5em 1em;
     border-radius: .5em;
     transition: 250ms ease-in-out;
     outline: none;
     border: none;
+    box-shadow: 0 0 .5em 0 #fff;
 }
 
 button:hover {
-    background-color: #0abfbc;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
     transform: scale(1.05);
 }
