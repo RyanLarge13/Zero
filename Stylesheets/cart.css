@@ -113,7 +113,7 @@ main {
 
 .alert button {
     padding: .25em .75em;
-    background-color: #ff0000;
+    background-color: #fff;
     color: #000;
     outline: none;
     border: none;
@@ -136,6 +136,9 @@ main {
 
 .alert button:hover {
     scale: 1.1;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 .5em 0 #fff;
 }
 
 .empty {
@@ -195,14 +198,12 @@ h1 {
     border: none;
     outline: none;
     border-radius: 50%;
+    background-color: #000;
+    color: #fff;
 }
 
-.up {
-    background-color: #11eeee;
-}
-
-.down {
-    background-color: #ff0000;
+.quantity button:hover {
+    cursor: pointer;
 }
 
 .danger {
@@ -223,19 +224,24 @@ h1 {
 }
 
 .checkout-clear div {
-    width: max-content;
+    text-align: center;
+    width: 15%;
     color: #fff;
     font-size: 1.5em;
-    background-color: #11eeee;
+    background-color: #000;
+    border-radius: .5em;
     padding: .25em .75em;
     font-weight: 600;
     margin: 2.5em 1em;
     transition: 250ms ease-in-out;
+    box-shadow: 0 0 .5em 0 #fff;
 }
 
 .checkout-clear div:hover {
     scale: 1.1;
     cursor: pointer;
+    background-color: #fff;
+    color: #000;
 }
 
 .fa-cart-shopping {
