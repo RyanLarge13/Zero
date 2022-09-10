@@ -66,6 +66,57 @@ header a:hover {
     background-size: 100% 3px;
 }
 
+.alert {
+    padding: 0 2em;
+    text-align: center;
+    position: fixed;
+    top: 5%;
+    z-index: 999;
+    height: 20vh;
+    width: 25vw;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: 250ms ease-in-out;
+    border-radius: .25em;
+    box-shadow: inset 0 0 .5em 0 #000;
+}
+
+.alert button {
+    padding: .25em .75em;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border: none;
+    border-radius: .25em;
+    transition: 250ms ease-in-out;
+}
+
+.shade {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+    transition: 250ms ease-in-out;
+    z-index: 998;
+}
+
+.alert button:hover {
+    scale: 1.1;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 .5em 0 #fff;
+}
+
 .cart {
     position: relative;
 }

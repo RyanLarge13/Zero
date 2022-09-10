@@ -5,6 +5,8 @@ const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll('aside ul li');
 const buyBtns = document.querySelectorAll('.buy');
 const indicator = document.querySelector('.indicator');
+const alert = document.querySelector('.alert');
+const shade = document.querySelector('.shade');
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -35,6 +37,17 @@ const add = (e) => {
   const format = title.replace(' ', '').toLowerCase();
   localStorage.setItem(title, format);
   indicate();
+  showAddedToCart(title);
+};
+
+const showAddedToCart = async (title) => {
+  alert.style.transform = "translate(-50%, 0)";
+  alert.innerHTML = `You have successfully added ${title} to your cart`;
+  shade.style.opacity = "1";
+  setTimeout(() => {
+    alert.style.transform = 'translate(-50%, -200%)';
+    shade.style.opacity = '0';
+  }, 3000);
 };
 
 const indicate = () => {

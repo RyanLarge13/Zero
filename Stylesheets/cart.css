@@ -93,7 +93,7 @@ main {
 
 .alert {
     text-align: center;
-    position: absolute;
+    position: fixed;
     top: 5%;
     z-index: 999;
     height: 20vh;
@@ -124,7 +124,7 @@ main {
 .shade {
     opacity: 0;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -214,7 +214,6 @@ h1 {
 }
 
 .checkout-clear {
-    position: absolute;
     bottom: 5%;
     width: 100vw;
     height: max-content;
