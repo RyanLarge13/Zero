@@ -578,12 +578,16 @@ footer {
    .text-content {
    	display: flex;
    	flex-direction: column;
-   	justify-content: center;
+   	justify-content: space-around;
    	align-items: center;
    	transform: rotateY(0) rotateX(25deg);
    	height: 40%;
    	width: 100%;
    }
+   
+  .text-content p {
+  	font-size: 1em;
+  }
    
   .grid {
   	grid-template-columns: 1fr;
@@ -599,10 +603,12 @@ footer {
  
 .buttons {
 	flex-direction: column;
+	justify-content: space-between;
+	height: 10%;
 }
 
 .buttons button {
-	margin-top: 1em;
+	
 }
 
 .bubble {
