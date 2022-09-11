@@ -13,7 +13,10 @@ const h3 = document.querySelector(".sec-1 h3");
 const navDots = document.querySelectorAll('.dot');
 const rightBtn = document.querySelector('.fa-circle-chevron-right');
 const leftBtn = document.querySelector('.fa-circle-chevron-left');
-const card = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card');
+const indicator = document.querySelector('.indicator');
+const grid = document.querySelector('.grid');
+const products = [];
 
 let count = 0;
 let navCount = 0;
@@ -144,6 +147,40 @@ const turnPage = (direction) => {
     }
 };
 
+const indicate = () => {
+    indicator.innerHTML = products.length;
+};
+
+const showProducts = () => {
+  let keys = Object.keys(localStorage);
+  for (let k = 0; k < localStorage.length; k++) {
+    if (localStorage.getItem(keys[k]) === "true") continue;
+    products.push(localStorage.getItem(keys[k]));
+  }
+  indicate();
+};
+
+const renderSpecials = (e) => {
+    const title = e.target.innerText;
+    renderNewCards(title);
+};
+
+const renderNewCards = (title) => {
+    const cardList = Array.from(document.querySelectorAll('.card-list div'));
+    cardList.forEach((newCard) => {
+        if (newCard.id === title) removeAndReplace(newCard, title);
+    });
+};
+
+const removeAndReplace = (card, title) => {
+    grid.insertAdjacentElement('afterbegin', card);
+    cards.forEach((card) => {
+        if (card.id !== title) card.remove();
+    });
+};
+
+showProducts();
+
 //event listeners
 navToggle.addEventListener('click', toggleNav);
 skip.addEventListener('click', killSec1);
@@ -159,6 +196,11 @@ navDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         navCount = index;
         showNextSec();
+    });
+});
+cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+        renderSpecials(e);
     });
 });
 

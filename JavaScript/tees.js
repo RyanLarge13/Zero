@@ -7,6 +7,7 @@ const buyBtns = document.querySelectorAll('.buy');
 const indicator = document.querySelector('.indicator');
 const alert = document.querySelector('.alert');
 const shade = document.querySelector('.shade');
+const products = [];
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -36,7 +37,6 @@ const add = (e) => {
   const title = e.target.parentElement.previousElementSibling.innerHTML;
   const format = title.replace(' ', '').toLowerCase();
   localStorage.setItem(title, format);
-  indicate();
   showAddedToCart(title);
 };
 
@@ -51,8 +51,19 @@ const showAddedToCart = async (title) => {
 };
 
 const indicate = () => {
-  indicator.innerHTML = localStorage.length;
+  indicator.innerHTML = products.length;
 };
+
+const showProducts = () => {
+  let keys = Object.keys(localStorage);
+  for (let k = 0; k < localStorage.length; k++) {
+    if (localStorage.getItem(keys[k]) === "true") continue;
+    products.push(localStorage.getItem(keys[k]));
+  }
+  indicate();
+};
+
+showProducts();
 
 //event listeners
 navToggle.addEventListener("click", toggleNav);

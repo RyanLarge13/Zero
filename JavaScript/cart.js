@@ -22,7 +22,6 @@ const toggleNav = () => {
 //clearing the cart and local storage functions
 const clearStorage = () => {
   localStorage.clear();
-  localStorage.setItem("has visited", "true");
   clearCart();
 };
 

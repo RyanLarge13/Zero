@@ -7,6 +7,8 @@ const yourName = document.getElementById('name');
 const tel = document.getElementById('tel');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
+const indicator = document.querySelector('.indicator');
+const products = [];
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -25,6 +27,21 @@ const validate = (e) => {
   let id = e.target.id;
   
 };
+
+const indicate = () => {
+  indicator.innerHTML = products.length;
+};
+
+const showProducts = () => {
+  let keys = Object.keys(localStorage);
+  for (let k = 0; k < localStorage.length; k++) {
+    if (localStorage.getItem(keys[k]) === "true") continue;
+    products.push(localStorage.getItem(keys[k]));
+  }
+  indicate();
+};
+
+showProducts();
 
 //event listeners
 navToggle.addEventListener("click", toggleNav);
