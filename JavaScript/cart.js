@@ -20,7 +20,8 @@ const toggleNav = () => {
 };
 
 //clearing the cart and local storage functions
-const clearStorage = () => {
+const clearStorage = (e) => {
+	e.preventDefault();
   localStorage.clear();
   clearCart();
 };
@@ -84,6 +85,7 @@ const append = (elementArray) => {
 //showing all products
 const showProducts = () => {
   let keys = Object.keys(localStorage);
+  console.log(keys)
   for (let k = 0; k < localStorage.length; k++) {
     if (localStorage.getItem(keys[k]) === 'true') continue;
     products.push(localStorage.getItem(keys[k]));
@@ -123,7 +125,6 @@ const checkOut = () => {
 const closeAlert = () => {
   alert.style.transform = 'translate(-50%, -200%)';
   shade.style.opacity = "0";
-
 };
  
 showProducts();

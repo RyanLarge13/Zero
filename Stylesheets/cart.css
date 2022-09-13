@@ -395,7 +395,14 @@ footer {
  	width: 100vw;
  	max-height: 15%;
  	background-color: #000;
+ 	font-size: .5em;
+ 	bottom: 100%;
  }
+ 
+.checkout-clear div {
+  width: fit-content;
+  margin: 6em 1em;
+}
 
     .license {
         display: none;
