@@ -38,6 +38,8 @@ const add = (e) => {
   const format = title.replace(' ', '').toLowerCase();
   localStorage.setItem(title, format);
   showAddedToCart(title);
+  products.push(title);
+  indicate();
 };
 
 const showAddedToCart = async (title) => {
