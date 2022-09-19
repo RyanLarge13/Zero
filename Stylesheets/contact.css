@@ -7,10 +7,7 @@
 
 body {
     overflow-x: hidden;
-    background-image: url(https://t3.ftcdn.net/jpg/01/04/05/40/360_F_104054084_Ch12dStJmYPdNGUwv73yARVbJ7e4i0Ck.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #000;
 }
 
 header {

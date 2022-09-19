@@ -364,11 +364,26 @@ main i:hover {
     background-size: cover;
     box-shadow: 0 0 .75em 0 #fff;
     transition: 250ms ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(.5em) translateX(.5em);
+    }
+    75% {
+        transform: translateX(-.5em);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .bubble:hover {
     cursor: pointer;
     transform: scale(1.05);
+    animation-play-state: paused;
 }
 
 .bubble1 {
@@ -377,6 +392,8 @@ main i:hover {
     height: 40px;
     right: 10%;
     top: 20%;
+    animation-name: move;
+    animation-duration: 2.5s;
 }
 .bubble2 {
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIkSPlRGoB16Kb-9q3l0H0swTq307DbN2je3xgqV_pFsuvPilZ4NdbLiQ6jUGvjBVDjJs&usqp=CAU);
@@ -384,6 +401,8 @@ main i:hover {
     height: 60px;
     right: 20%;
     top: 30%;
+    animation-name: move;
+    animation-duration: 3.25s;
 }
 .bubble3 {
     background-image: url(https://static.vecteezy.com/system/resources/previews/002/557/421/original/tiktok-logo-black-mobile-social-media-icon-free-vector.jpg);
@@ -391,6 +410,8 @@ main i:hover {
     height: 50px;
     right: 15%;
     top: 75%;
+    animation-name: move;
+    animation-duration: 2.25s;
 }
 .bubble4 {
     background-color: #fff;
@@ -399,6 +420,8 @@ main i:hover {
     height: 40px;
     left: 10%;
     top: 20%;
+    animation-name: move;
+    animation-duration: 2.75s;
 }
 .bubble5 {
     background-color: #fff;
@@ -407,6 +430,8 @@ main i:hover {
     height: 60px;
     left: 20%;
     top: 30%;
+    animation-name: move;
+    animation-duration: 2s;
 }
 .bubble6 {
     background-color: #fff;
@@ -415,6 +440,8 @@ main i:hover {
     height: 50px;
     left: 15%;
     top: 75%;
+    animation-name: move;
+    animation-duration: 3s;
 }
 
 footer {
