@@ -14,6 +14,11 @@ body {
     background-color: #000;
 }
 
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
 header {
     position: fixed;
     display: flex;
@@ -164,16 +169,24 @@ h1 {
     position: relative;
     width: 100vw;
     height: fit-content;
+    min-height:30vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5em 7em;
 }
 
 .product {
+    border-radius: .25em;
     position: relative;
     width: 100%;
     height: 50vh;
     background-color: #fff;
+}
+
+.product h2 {
+    position: absolute;
+    left: 50%;
+    translate: -50% 100%;
 }
 
 .foot {
@@ -181,40 +194,46 @@ h1 {
     bottom: 0;
     width: 100%;
     height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 .quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
-
-.quantity button {
-    font-size: 1em;
-    font-weight: 600;
-    width: 1.25em;
-    height: 1.25em;
+    font-size: 1.25em;
     margin: 0 1em;
-    border: none;
-    outline: none;
-    border-radius: 50%;
-    background-color: #000;
-    color: #fff;
 }
 
-.quantity button:hover {
+.foot i {
+    font-size: 1.25em;
     cursor: pointer;
+    z-index: 900;
+    transition: 100ms ease-in-out;
+}
+
+.foot i:hover {
+    scale: 1.1;
 }
 
 .danger {
+    border-radius: .25em;
     padding: .5em 1em;
-    background-color: #ff0000;
-    border: none;
-    outline: none;
+    background-color: #f72d2d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: .1em .1em .75em 0 #000;
+    transition: 250ms ease-in-out;
+}
+
+.danger:hover {
+    scale: 1.1;
 }
 
 .checkout-clear {
-    bottom: 5%;
     width: 100vw;
     height: max-content;
     display: flex;

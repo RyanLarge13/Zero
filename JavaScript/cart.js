@@ -11,7 +11,7 @@ const alert = document.querySelector('.alert');
 const closeBtn = document.querySelector('.close');
 const shade = document.querySelector('.shade');
 let products = [];
-let quantityAmount = 0;
+let quantityAmount = 1;
 
 //mobile hamburger menu
 const toggleNav = () => {
@@ -32,15 +32,19 @@ const clearCart = () => {
 };
 
 //product functionality functions
-const inc = (elem) => {
-	quantityAmount++;
-	elem.innerHTML = quantityAmount;
+const inc = (e) => {
+  const quantity = e.target.previousElementSibling;
+  let amount = Number(quantity.innerHTML);
+  amount++;
+	quantity.innerHTML = amount;
 };
 
-const dec = (elem) => {
-	if (quantityAmount === 0) return;
-	quantityAmount--;
-	elem.innerHTML = quantityAmount;
+const dec = (e) => {
+  const quantity = e.target.nextElementSibling;
+  let amount = Number(quantity.innerHTML);
+	if (amount === 1) return;
+  amount--;
+	quantity.innerHTML = amount;
 };
 
 const removeProduct = (e) => {
@@ -48,52 +52,56 @@ const removeProduct = (e) => {
 };
 
 //beginning of the product display
-const createElements = () => {
-  const product = document.createElement("div");
-  const foot = document.createElement("div");
-  const quantity = document.createElement("div");
-  const up = document.createElement("button");
-  const down = document.createElement("button");
-  const danger = document.createElement("button");
-  const count = document.createElement("h2");
-  danger.className = "danger";
-  down.className = "down";
-  up.className = "up";
-  quantity.className = "quantity";
-  foot.className = "foot";
-  product.className = "product";
-  up.innerText = '+';
-  down.innerText = '-';
-  danger.innerHTML = 'Clear';
-  quantity.innerHTML = quantityAmount;
-  const component = [product, foot, quantity, up, down, count, danger];
-  append(component);
-};
-
-const append = (elementArray) => {
-  elementArray[0].appendChild(elementArray[1]);
-  elementArray[1].appendChild(elementArray[2]);
-  elementArray[2].appendChild(elementArray[4]);
-  elementArray[2].insertAdjacentElement('afterbegin',elementArray[5]);
-  elementArray[2].appendChild(elementArray[3]);
-  elementArray[1].appendChild(elementArray[6]);
-  const product = elementArray[0];
+const createElements = (title) => {
+  const container = document.querySelector('.product-container');
+  const product = document.createElement('div');
+  product.className = 'product';
+  product.innerHTML = `
+    <h2>${title}</h2>
+    <div class="foot">
+      <i class="down fa-solid fa-circle-minus"></i>
+      <p class="quantity">${quantityAmount}</p>
+      <i class="up fa-solid fa-circle-plus"></i>
+    </div>
+    <div class="danger">Delete</div>
+  `;
   container.appendChild(product);
+  addListeners();
 };
 
+const addListeners = () => {
+  const up = document.querySelectorAll('.up');
+  const down = document.querySelectorAll(".down");
+  const danger = document.querySelectorAll('.danger');
+  danger.forEach((btn) => {
+    btn.addEventListener('click', remove);
+  })
+  up.forEach((btn) => {
+    btn.addEventListener('click', inc);
+  });
+  down.forEach((btn) => {
+    btn.addEventListener("click", dec);
+  });
+};
+
+const remove = (e) => {
+  const product = e.target.parentElement;
+  const container = document.querySelector('.product-container');
+  container.removeChild(product);
+  products.splice(products.indexOf(product), 1);
+  indicate();
+  // localStorage.removeItem()
+};
 
 //showing all products
 const showProducts = () => {
   let keys = Object.keys(localStorage);
-  console.log(keys)
   for (let k = 0; k < localStorage.length; k++) {
     if (localStorage.getItem(keys[k]) === 'true') continue;
     products.push(localStorage.getItem(keys[k]));
+    createElements(keys[k]);
   }
   indicate();
-  products.forEach((item) => {
-    createElements();
-  });
 };
 
 //cart items count indicator function
