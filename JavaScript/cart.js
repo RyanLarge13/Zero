@@ -90,14 +90,15 @@ const remove = (e) => {
   container.removeChild(product);
   products.splice(products.indexOf(product), 1);
   indicate();
-  // localStorage.removeItem()
+  const title = product.firstElementChild.innerHTML;
+  localStorage.removeItem(title);
 };
 
 //showing all products
 const showProducts = () => {
   let keys = Object.keys(localStorage);
   for (let k = 0; k < localStorage.length; k++) {
-    if (localStorage.getItem(keys[k]) === 'true') continue;
+    if (localStorage.getItem(keys[k]) !== 'product') continue;
     products.push(localStorage.getItem(keys[k]));
     createElements(keys[k]);
   }

@@ -35,8 +35,7 @@ const openNav = (e) => {
 //These functions add a product to an array
 const add = (e) => {
   const title = e.target.parentElement.previousElementSibling.innerHTML;
-  const format = title.replace(' ', '').toLowerCase();
-  localStorage.setItem(title, format);
+  localStorage.setItem(title, 'product');
   showAddedToCart(title);
   products.push(title);
   indicate();

@@ -16,7 +16,6 @@ const leftBtn = document.querySelector('.fa-circle-chevron-left');
 const cards = document.querySelectorAll('.card');
 const indicator = document.querySelector('.indicator');
 const grid = document.querySelector('.grid');
-const products = [];
 
 let count = 0;
 let navCount = 0;
@@ -147,19 +146,6 @@ const turnPage = (direction) => {
     }
 };
 
-const indicate = () => {
-    indicator.innerHTML = products.length;
-};
-
-const showProducts = () => {
-  let keys = Object.keys(localStorage);
-  for (let k = 0; k < localStorage.length; k++) {
-    if (localStorage.getItem(keys[k]) === "true") continue;
-    products.push(localStorage.getItem(keys[k]));
-  }
-  indicate();
-};
-
 const renderSpecials = (e) => {
     const title = e.target.innerText;
     renderNewCards(title);
@@ -178,8 +164,6 @@ const removeAndReplace = (card, title) => {
         if (card.id !== title) card.remove();
     });
 };
-
-showProducts();
 
 //event listeners
 navToggle.addEventListener('click', toggleNav);
