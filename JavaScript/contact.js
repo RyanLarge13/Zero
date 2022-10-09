@@ -35,7 +35,7 @@ const indicate = () => {
 const showProducts = () => {
   let keys = Object.keys(localStorage);
   for (let k = 0; k < localStorage.length; k++) {
-    if (localStorage.getItem(keys[k]) === "true") continue;
+    if (localStorage.getItem(keys[k]) !== "product") continue;
     products.push(localStorage.getItem(keys[k]));
   }
   indicate();
