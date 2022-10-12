@@ -1,12 +1,11 @@
 import { teeProducts } from "../constants/teeProducts.js";
 
 //variables
+const main = document.querySelector("main");
 const lines = document.querySelectorAll("span");
 const navToggle = document.querySelector(".toggle");
 const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll("aside ul li");
-//const buyBtns = document.querySelectorAll(".buy");
-//const viewBtns = document.querySelectorAll(".view");
 const indicator = document.querySelector(".indicator");
 const alert = document.querySelector(".alert");
 const shade = document.querySelector(".shade");
@@ -97,8 +96,24 @@ const view = (e) => {
 const createView = (elem) => {
   const info = document.createElement("div");
   info.className = "info";
-  info.innerHTML = `<h2>${elem.title}</h2><p>${elem.description}</p>`;
-  info.style.transform = 'translateY(0)';
+  info.innerHTML = `<i class="fa-solid fa-xmark close-view"></i><h2>${
+    elem.title
+  }</h2><p>${elem.description}</p><h4>${
+    elem.featured ? "Special Offer!" : ""
+  }</h4><h3>$${elem.price}</h3>`;
+  main.appendChild(info);
+  setTimeout(() => {
+    info.style.opacity = "1";
+  }, 10);
+  const close = document
+    .querySelector(".close-view")
+    .addEventListener("click", () => {
+    	info.style.opacity = '0';
+    	setTimeout(() => {
+      main.removeChild(info);
+    		
+    	}, 350);
+    });
 };
 
 showProducts();
@@ -107,5 +122,3 @@ createElements();
 //event listeners
 navToggle.addEventListener("click", toggleNav);
 listParents.forEach((item) => item.addEventListener("click", openNav));
-//buyBtns.forEach((btn) => btn.addEventListener("click", add));
-//viewBtns.forEach((btn) => btn.addEventListener("click", view));

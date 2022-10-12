@@ -323,17 +323,26 @@ footer {
 }
 
 .info {
-  position: absolute;
-  transform: translateY(100%);
+  text-align: center;
+  opacity: 0;
+  position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  transition: 250ms ease-in-out;
+  transition: 350ms ease-in-out;
   background-color: #fff;
   z-index: 999;
+}
+
+.close-view {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  font-size: 1em;
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
