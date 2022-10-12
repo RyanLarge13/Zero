@@ -1,16 +1,4 @@
-//variables
-//const lines = document.querySelectorAll("span");
-//const navToggle = document.querySelector(".toggle");
-//const navigation = document.querySelector("nav");
-
-//mobile hamburger menu
-//const toggleNav = () => {
-//lines.forEach((line) => line.classList.toggle("nav"));
-//navigation.classList.toggle("scale");
-//};
-
-//event listeners
-//navToggle.addEventListener("click", toggleNav);
+import { sweaterProducts } from "../constants/sweaterProducts.js";
 
 //variables
 const lines = document.querySelectorAll("span");
@@ -43,6 +31,16 @@ const openNav = (e) => {
       children.style.opacity = "0";
     }, 1);
   }
+};
+
+const createElements = () => {
+  const container = document.querySelector(".grid");
+  sweaterProducts.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<h2 class="title">${product.title}</h2><div class="foot"><button class="buy">Buy</button><button class="view">View</button></div>`;
+  container.appendChild(card);
+  });
 };
 
 //These functions add a product to an array
@@ -78,6 +76,7 @@ const showProducts = () => {
 };
 
 showProducts();
+createElements();
 
 //event listeners
 navToggle.addEventListener("click", toggleNav);

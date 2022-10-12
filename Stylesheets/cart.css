@@ -311,7 +311,7 @@ footer {
 
 @media (min-width: 300px) and (max-width: 900px) {
   .alert {
-    width: max-content;
+    width: 75vw;
     height: min-content;
     padding: 1.5em 2em;
   }
