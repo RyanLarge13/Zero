@@ -323,6 +323,7 @@ footer {
 }
 
 .info {
+	padding: 0 2em;
   text-align: center;
   opacity: 0;
   position: fixed;

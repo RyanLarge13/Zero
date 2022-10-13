@@ -421,6 +421,11 @@ footer {
     min-height: 45vh;
   }
 
+  .price {
+    position: absolute;
+    top: 70%;
+  }
+
   .danger {
     transform: translate(-10%, -10%);
   }
