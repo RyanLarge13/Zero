@@ -44,7 +44,7 @@ const inc = (e) => {
   allProducts.forEach((elem) => {
     if (elem.title === title) {
       const price = elem.price;
-      let total = document.querySelector(".price");
+      let total = e.target.parentElement.parentElement.children[1];
       let amount = Number(quantity.innerHTML);
       amount++;
       quantity.innerHTML = amount;
@@ -60,7 +60,7 @@ const dec = (e) => {
   allProducts.forEach((elem) => {
     if (elem.title === title) {
       const price = elem.price;
-      let total = document.querySelector(".price");
+      let total = e.target.parentElement.parentElement.children[1];
       let amount = Number(quantity.innerHTML);
       if (amount === 1) return;
       amount--;
@@ -149,11 +149,25 @@ const showEmpty = () => {
 };
 
 //handling checkout
-const checkOut = () => {
+const checkOut = (e) => {
+  e.preventDefault();
   if (products.length === 0) {
     alert.style.transform = "translate(-50%, 0)";
     shade.style.opacity = "1";
   } else {
+    const elems = document.querySelectorAll(".price");
+    let priceArray = [];
+    elems.forEach((elem) => {
+      const arr = Array.from(elem.innerText);
+      const index = arr.indexOf("$");
+      if (index > -1) {
+        arr.splice(index, 1);
+        const prices = Number(arr.join(""));
+        priceArray.push(prices);
+      }
+    });
+    const price = priceArray.reduce((a, b) => a + b);
+    localStorage.setItem("totalPrice", price);
     window.location = "../HTML/checkout.html";
   }
   closeBtn.addEventListener("click", closeAlert);
