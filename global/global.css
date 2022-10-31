@@ -14,13 +14,9 @@ body {
   background-color: #000;
 }
 
-main {
-  width: 100vw;
-  height: 100vh;
-}
-
 header {
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,12 +84,6 @@ header a:hover {
   justify-content: center;
   align-items: center;
   font-size: 0.5em;
-}
-
-main {
-  width: 100vw;
-  height: fit-content;
-  padding: 5% 0;
 }
 
 footer {
@@ -228,9 +218,5 @@ footer {
   span:nth-child(3).nav {
     bottom: 50%;
     transform: translateY(50%) rotateZ(45deg);
-  }
-
-  main {
-    max-height: 100vh;
   }
 }

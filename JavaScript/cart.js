@@ -61,10 +61,6 @@ const dec = (e) => {
   });
 };
 
-const removeProduct = (e) => {
-  container.remove(e.target.parentElement.previousElementSibling);
-};
-
 //beginning of the product display
 const createElements = (title) => {
   const container = document.querySelector(".product-container");
