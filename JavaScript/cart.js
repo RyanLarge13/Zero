@@ -4,9 +4,9 @@ import { sweaterProducts } from "../constants/sweaterProducts.js";
 const allProducts = teeProducts.concat(sweaterProducts);
 
 //variables
-const lines = document.querySelectorAll("span");
-const navToggle = document.querySelector(".toggle");
-const navigation = document.querySelector("nav");
+//const lines = document.querySelectorAll("span");
+//const navToggle = document.querySelector(".toggle");
+//const navigation = document.querySelector("nav");
 const clearCartBtn = document.querySelector(".clear-cart");
 const indicator = document.querySelector(".indicator");
 const shopingCartIcon = document.querySelector(".fa-cart-shopping");
@@ -19,10 +19,10 @@ let products = [];
 let quantityAmount = 1;
 
 //mobile hamburger menu
-const toggleNav = () => {
-  lines.forEach((line) => line.classList.toggle("nav"));
-  navigation.classList.toggle("scale");
-};
+//const toggleNav = () => {
+//lines.forEach((line) => line.classList.toggle("nav"));
+// navigation.classList.toggle("scale");
+//};
 
 //clearing the cart and local storage functions
 const clearStorage = (e) => {
@@ -181,6 +181,6 @@ const closeAlert = () => {
 showProducts();
 
 //event listeners
-navToggle.addEventListener("click", toggleNav);
+//navToggle.addEventListener("click", toggleNav);
 clearCartBtn.addEventListener("click", clearStorage);
 checkout.addEventListener("click", checkOut);
