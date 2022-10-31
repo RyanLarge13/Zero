@@ -63,12 +63,15 @@
   color: white;
 }
 
+.text-content button {
+  outline: none;
+  border: none;
+}
+
 .text-content button a {
   text-decoration: none;
   padding: 0.5em 1em;
   border-radius: 0.5em;
-  border: none;
-  outline: none;
   background-color: #000;
   color: #fff;
   transition: 250ms ease-in-out;
@@ -354,8 +357,6 @@ main i:hover {
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
-  
-
   .sec-1 {
     width: 100vw;
     text-align: center;
@@ -387,6 +388,8 @@ main i:hover {
     position: absolute;
     bottom: 25%;
     left: 50%;
+    width: 35%;
+    height: 20%;
     transform: translateX(-50%);
   }
 

@@ -1,21 +1,12 @@
 import { sweaterProducts } from "../constants/sweaterProducts.js";
 
 //variables
-const lines = document.querySelectorAll("span");
-const navToggle = document.querySelector(".toggle");
-const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll("aside ul li");
 const buyBtns = document.querySelectorAll(".buy");
 const indicator = document.querySelector(".indicator");
 const alert = document.querySelector(".alert");
 const shade = document.querySelector(".shade");
 const products = [];
-
-//mobile hamburger menu
-const toggleNav = () => {
-  lines.forEach((line) => line.classList.toggle("nav"));
-  navigation.classList.toggle("scale");
-};
 
 const openNav = (e) => {
   const children = e.target.firstElementChild;
@@ -39,7 +30,7 @@ const createElements = () => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<h2 class="title">${product.title}</h2><div class="foot"><button class="buy">Buy</button><button class="view">View</button></div>`;
-  container.appendChild(card);
+    container.appendChild(card);
   });
 };
 
@@ -79,6 +70,5 @@ showProducts();
 createElements();
 
 //event listeners
-navToggle.addEventListener("click", toggleNav);
 listParents.forEach((item) => item.addEventListener("click", openNav));
 buyBtns.forEach((btn) => btn.addEventListener("click", add));

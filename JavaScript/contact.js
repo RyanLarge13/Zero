@@ -1,7 +1,4 @@
 //variables
-const lines = document.querySelectorAll("span");
-const navToggle = document.querySelector(".toggle");
-const navigation = document.querySelector("nav");
 const form = document.querySelector('form');
 const yourName = document.getElementById('name');
 const tel = document.getElementById('tel');
@@ -9,12 +6,6 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 const indicator = document.querySelector('.indicator');
 const products = [];
-
-//mobile hamburger menu
-const toggleNav = () => {
-  lines.forEach((line) => line.classList.toggle("nav"));
-  navigation.classList.toggle("scale");
-};
 
 //These funtions handle what to do when submitting the form
 const handleForm = (e) => {
@@ -44,7 +35,6 @@ const showProducts = () => {
 showProducts();
 
 //event listeners
-navToggle.addEventListener("click", toggleNav);
 form.addEventListener('submit', handleForm);
 yourName.addEventListener('keyup', validate);
 email.addEventListener('keyup', validate);

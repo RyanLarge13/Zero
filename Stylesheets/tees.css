@@ -51,7 +51,7 @@
 
 h1 {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
@@ -113,10 +113,9 @@ aside ul li ul li:hover {
 }
 
 .grid {
-  margin-top: 5%;
   height: 400vh;
   width: 100vw;
-  padding: 10% 20%;
+  padding: 0 20%;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, 1fr);
@@ -217,7 +216,6 @@ aside ul li ul li:hover {
     width: 50vw;
   }
 
-
   main {
     display: flex;
     flex-direction: column;
@@ -226,7 +224,6 @@ aside ul li ul li:hover {
   }
 
   .grid {
-    margin-top: 50%;
     grid-template-columns: 1fr;
   }
 
@@ -237,5 +234,9 @@ aside ul li ul li:hover {
   aside {
     margin-top: 15%;
     width: 22.5vw;
+  }
+
+  .card {
+    height: 30vh;
   }
 }

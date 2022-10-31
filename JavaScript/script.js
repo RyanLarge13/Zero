@@ -1,7 +1,4 @@
 //variables
-const lines = document.querySelectorAll("span");
-const navToggle = document.querySelector(".toggle");
-const navigation = document.querySelector("nav");
 const skip = document.querySelector(".skip");
 const sec1 = document.querySelector(".sec-1");
 const sec2 = document.querySelector(".sec-2");
@@ -21,12 +18,6 @@ let count = 0;
 let navCount = 0;
 let direction;
 let products = [];
-
-//mobile hamburger menu
-const toggleNav = () => {
-  lines.forEach((line) => line.classList.toggle("nav"));
-  navigation.classList.toggle("scale");
-};
 
 //localstorage variables and function to check weather or not someone has previously visited and to stop showing the welcome messages
 
@@ -184,7 +175,6 @@ const indicate = () => {
 showProducts();
 
 //event listeners
-navToggle.addEventListener("click", toggleNav);
 skip.addEventListener("click", killSec1);
 rightBtn.addEventListener("click", () => {
   direction = "right";

@@ -2,20 +2,11 @@ import { teeProducts } from "../constants/teeProducts.js";
 
 //variables
 const main = document.querySelector("main");
-const lines = document.querySelectorAll("span");
-const navToggle = document.querySelector(".toggle");
-const navigation = document.querySelector("nav");
 const listParents = document.querySelectorAll("aside ul li");
 const indicator = document.querySelector(".indicator");
 const alert = document.querySelector(".alert");
 const shade = document.querySelector(".shade");
 const products = [];
-
-//mobile hamburger menu
-const toggleNav = () => {
-  lines.forEach((line) => line.classList.toggle("nav"));
-  navigation.classList.toggle("scale");
-};
 
 const createElements = () => {
   const container = document.querySelector(".grid");
@@ -120,5 +111,4 @@ showProducts();
 createElements();
 
 //event listeners
-navToggle.addEventListener("click", toggleNav);
 listParents.forEach((item) => item.addEventListener("click", openNav));
