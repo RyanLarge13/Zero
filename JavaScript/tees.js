@@ -2,7 +2,6 @@ import { teeProducts } from "../constants/teeProducts.js";
 
 //variables
 const main = document.querySelector("main");
-const listParents = document.querySelectorAll("aside ul li");
 const indicator = document.querySelector(".indicator");
 const alert = document.querySelector(".alert");
 const shade = document.querySelector(".shade");
@@ -24,22 +23,6 @@ const createElements = () => {
 const addListeners = (buyBtns, viewBtns) => {
   buyBtns.forEach((btn) => btn.addEventListener("click", add));
   viewBtns.forEach((btn) => btn.addEventListener("click", view));
-};
-
-const openNav = (e) => {
-  const children = e.target.firstElementChild;
-  children.classList.toggle("scale");
-  if (children.classList.contains("scale")) {
-    setTimeout(() => {
-      children.style.transition = "250ms ease-in-out";
-      children.style.opacity = "1";
-    }, 100);
-  } else {
-    setTimeout(() => {
-      children.style.transition = "none";
-      children.style.opacity = "0";
-    }, 1);
-  }
 };
 
 //These functions add a product to an array
@@ -99,16 +82,12 @@ const createView = (elem) => {
   const close = document
     .querySelector(".close-view")
     .addEventListener("click", () => {
-    	info.style.opacity = '0';
-    	setTimeout(() => {
-      main.removeChild(info);
-    		
-    	}, 350);
+      info.style.opacity = "0";
+      setTimeout(() => {
+        main.removeChild(info);
+      }, 350);
     });
 };
 
 showProducts();
 createElements();
-
-//event listeners
-listParents.forEach((item) => item.addEventListener("click", openNav));
