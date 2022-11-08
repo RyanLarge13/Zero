@@ -36,7 +36,7 @@ const add = (e) => {
 
 const showAddedToCart = async (title) => {
   alert.style.transform = "translate(-50%, 0)";
-  alert.innerHTML = `You have successfully added ${title} to your cart`;
+  alert.innerHTML = `You have successfully added ${title} to your cart <br/> <a href="cart.html">ViewCart</a>`;
   shade.style.opacity = "1";
   setTimeout(() => {
     alert.style.transform = "translate(-50%, -200%)";
