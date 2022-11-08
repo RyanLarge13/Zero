@@ -28,15 +28,19 @@ const addListeners = (buyBtns, viewBtns) => {
 //These functions add a product to an array
 const add = (e) => {
   const title = e.target.parentElement.previousElementSibling.innerHTML;
-  localStorage.setItem(title, "product");
-  showAddedToCart(title);
-  products.push(title);
-  indicate();
+  const has = localStorage.getItem(title);
+  if (has !== null) return showAddedToCart(`You have already added ${title} to your cart.`);
+  else {
+    localStorage.setItem(title, "product");
+    showAddedToCart(`You have successfully added ${title} to your cart <br/> <a href="cart.html">ViewCart</a>`);
+    products.push(title);
+    indicate();
+  }
 };
 
 const showAddedToCart = async (title) => {
   alert.style.transform = "translate(-50%, 0)";
-  alert.innerHTML = `You have successfully added ${title} to your cart <br/> <a href="cart.html">ViewCart</a>`;
+  alert.innerHTML = title;
   shade.style.opacity = "1";
   setTimeout(() => {
     alert.style.transform = "translate(-50%, -200%)";

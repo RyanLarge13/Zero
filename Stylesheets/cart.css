@@ -19,7 +19,7 @@
 }
 
 .alert button {
-  padding: 0.25em 0.75em;
+  padding: 1em 2em;
   background-color: #000;
   color: #fff;
   outline: none;
@@ -56,6 +56,10 @@
   color: #fff;
 }
 
+main {
+  padding: 5% 0;
+}
+
 h1 {
   color: white;
   text-align: center;
@@ -71,13 +75,16 @@ h1 {
   position: relative;
   width: 100vw;
   min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product {
   margin: 2em 0;
   border-radius: 0.25em;
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 50vh;
   background-color: #fff;
   display: grid;
@@ -89,6 +96,11 @@ h1 {
   position: absolute;
   left: 50%;
   translate: -50% 100%;
+}
+
+.price {
+  position: absolute;
+  top: 60%;
 }
 
 .foot {
@@ -123,8 +135,8 @@ h1 {
   padding: 0.5em 1em;
   background-color: #f72d2d;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -10px;
+  left: -10px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0.1em 0.1em 0.75em 0 #000;
@@ -141,6 +153,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 1%;
+  position: fixed;
 }
 
 .checkout-clear div {
@@ -180,6 +194,11 @@ h1 {
     margin-top: 2em;
   }
 
+  h1 {
+    margin-bottom: 0;
+    margin-top: 2em;
+  }
+
   .product-container {
     height: fit-content;
     min-height: 50vh;
@@ -197,8 +216,11 @@ h1 {
   }
 
   .price {
-    position: absolute;
     top: 70%;
+  }
+
+  .empty {
+    bottom: 65%;
   }
 
   .danger {
@@ -215,7 +237,10 @@ h1 {
   }
 
   .checkout-clear div {
-    width: fit-content;
-    margin: 6em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 4em;
+    margin-bottom: 6em;
   }
 }
