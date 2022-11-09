@@ -14,6 +14,7 @@ const closeBtn = document.querySelector(".close");
 const shade = document.querySelector(".shade");
 let products = [];
 let quantityAmount = 1;
+let finishedQuanity = 0;
 
 //clearing the cart and local storage functions
 const clearStorage = (e) => {
@@ -118,6 +119,7 @@ const showProducts = () => {
     products.push(localStorage.getItem(keys[k]));
     createElements(keys[k]);
   }
+  finishedQuanity = products.length;
   indicate();
 };
 
@@ -143,7 +145,9 @@ const checkOut = (e) => {
     shade.style.opacity = "1";
   } else {
     const elems = document.querySelectorAll(".price");
+    const quantities = document.querySelectorAll('.quantity');
     let priceArray = [];
+    let quantityArray = [];
     elems.forEach((elem) => {
       const arr = Array.from(elem.innerText);
       const index = arr.indexOf("$");
@@ -152,6 +156,15 @@ const checkOut = (e) => {
         const prices = Number(arr.join(""));
         priceArray.push(prices);
       }
+    });
+    quantities.forEach((amount) => {
+      const newProduct = amount.parentElement.parentElement.children[0].innerHTML;
+      quantityArray.push(`${newProduct} ${Number(amount.innerHTML)}`);
+    });
+    quantityArray.forEach((item) => {
+      const itemToRemove = item.split(' ').splice(0, 2).join(' ');
+      localStorage.removeItem(itemToRemove);
+      localStorage.setItem(item, "product");
     });
     const price = priceArray.reduce((a, b) => a + b);
     localStorage.setItem("totalPrice", price);
