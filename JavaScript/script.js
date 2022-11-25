@@ -140,25 +140,6 @@ const turnPage = (direction) => {
   }
 };
 
-const renderSpecials = (e) => {
-  const title = e.target.innerText;
-  renderNewCards(title);
-};
-
-const renderNewCards = (title) => {
-  const cardList = Array.from(document.querySelectorAll(".card-list div"));
-  cardList.forEach((newCard) => {
-    if (newCard.id === title) removeAndReplace(newCard, title);
-  });
-};
-
-const removeAndReplace = (card, title) => {
-  grid.insertAdjacentElement("afterbegin", card);
-  cards.forEach((card) => {
-    if (card.id !== title) card.remove();
-  });
-};
-
 const showProducts = () => {
   let keys = Object.keys(localStorage);
   for (let k = 0; k < localStorage.length; k++) {
@@ -188,11 +169,6 @@ navDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     navCount = index;
     showNextSec();
-  });
-});
-cards.forEach((card) => {
-  card.addEventListener("click", (e) => {
-    renderSpecials(e);
   });
 });
 

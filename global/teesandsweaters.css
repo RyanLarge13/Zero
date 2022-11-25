@@ -71,7 +71,7 @@ h1 {
 }
 
 .catagory {
-	user-select: none;
+  user-select: none;
 }
 
 .catagory:hover ul {
@@ -281,7 +281,15 @@ aside ul li ul li:hover {
   .card {
     height: 30vh;
   }
-  
+
+  .foot {
+    height: 20%;
+  }
+
+  .foot button {
+    padding: 0.5em;
+  }
+
   .close-view {
     font-size: 1em;
   }

@@ -26,13 +26,16 @@ const addListeners = (buyBtns, viewBtns) => {
 };
 
 //These functions add a product to an array
-const add = (e) => {
+export const add = (e) => {
   const title = e.target.parentElement.previousElementSibling.innerHTML;
   const has = localStorage.getItem(title);
-  if (has !== null) return showAddedToCart(`You have already added ${title} to your cart.`);
+  if (has !== null)
+    return showAddedToCart(`You have already added ${title} to your cart.`);
   else {
     localStorage.setItem(title, "product");
-    showAddedToCart(`You have successfully added ${title} to your cart <br/> <a href="cart.html">ViewCart</a>`);
+    showAddedToCart(
+      `You have successfully added ${title} to your cart <br/> <a href="cart.html">ViewCart</a>`
+    );
     products.push(title);
     indicate();
   }
@@ -61,7 +64,7 @@ const showProducts = () => {
   indicate();
 };
 
-const view = (e) => {
+export const view = (e) => {
   const title =
     e.target.parentElement.parentElement.firstElementChild.innerHTML;
   teeProducts.forEach((elem) => {
@@ -76,9 +79,9 @@ const createView = (elem) => {
   info.className = "info";
   info.innerHTML = `<i class="fa-solid fa-xmark close-view"></i><h2>${
     elem.title
-  }</h2><p>${elem.description}</p><h4>${
-    elem.featured ? "Special Offer!" : ""
-  }</h4><h3>$${elem.price}</h3>`;
+  }</h2><p>${elem.description}</p>${
+    elem.featured ? "<h4>Special Offer!" : "<hr>"
+  }<h3>$${elem.price}</h3>`;
   main.appendChild(info);
   setTimeout(() => {
     info.style.opacity = "1";
