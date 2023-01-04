@@ -15,7 +15,9 @@ export const sweaterProducts = [
       "yellow",
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
+    tags: ["Most Popular", "Seller", "Best Price"],
     genders: ["male", "female"],
+
     featured: false,
   },
   {
@@ -26,6 +28,7 @@ export const sweaterProducts = [
     colors: ["red", "orange", "purple", "blue", "green", "pink", "yellow"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: [],
     featured: false,
   },
   {
@@ -35,6 +38,7 @@ export const sweaterProducts = [
     colors: ["black", "white", "red", "orange", "purple", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Height Quality", "Most Popular", "Seller", "Limited Edition"],
     featured: true,
   },
   {
@@ -55,6 +59,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Seller", "Most Popular", "Limited Edition"],
     featured: true,
   },
   {
@@ -75,6 +80,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Best Price"],
     featured: false,
   },
   {
@@ -95,6 +101,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tahs: ["Seller", "Limited Edition"],
     featured: true,
   },
   {
@@ -105,6 +112,7 @@ export const sweaterProducts = [
     colors: ["black", "white", "red", "purple", "blue", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Highest Quality"],
     featured: false,
   },
   {
@@ -115,6 +123,7 @@ export const sweaterProducts = [
     colors: ["black", "white"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Best Price"],
     featured: false,
   },
   {
@@ -135,6 +144,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Most Popular", "Seller"],
     featured: false,
   },
   {
@@ -155,6 +165,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Most Popular", "Seller", "Limited Edition"],
     featured: true,
   },
 ];

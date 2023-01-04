@@ -26,6 +26,8 @@ const visited = localStorage.getItem("has visited");
 window.addEventListener("DOMContentLoaded", () => {
   if (visited) {
     killSec1();
+  } else {
+  	return
   }
 });
 

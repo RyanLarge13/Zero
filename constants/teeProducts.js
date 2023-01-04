@@ -7,6 +7,7 @@ export const teeProducts = [
     colors: ["black", "white"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Limited Edition", "Most Popular", "Seller", "Highest Quality"],
     featured: true,
   },
   {
@@ -17,6 +18,7 @@ export const teeProducts = [
     colors: ["black", "white"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tag: ["Best Price"],
     featured: false,
   },
   {
@@ -27,6 +29,7 @@ export const teeProducts = [
     colors: ["black", "white", "red", "orange", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Best Price", "Seller"],
     featured: false,
   },
   {
@@ -37,6 +40,7 @@ export const teeProducts = [
     colors: ["black", "white", "blue", "purple", "yellow", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Best Price", "Seller", "Most Popular"],
     featured: false,
   },
   {
@@ -47,6 +51,7 @@ export const teeProducts = [
     colors: ["black", "white", "red", "orange", "purple", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Best Price"],
     featured: false,
   },
   {
@@ -67,6 +72,7 @@ export const teeProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Seller", "Limited Edition", "Most Popular"],
     featured: true,
   },
   {
@@ -87,6 +93,7 @@ export const teeProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: [],
     featured: true,
   },
   {
@@ -107,6 +114,7 @@ export const teeProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Limited Edition"],
     featured: true,
   },
   {
@@ -127,6 +135,7 @@ export const teeProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Limited Edition", "Seller", "Most Popular"],
     featured: true,
   },
   {
@@ -137,6 +146,7 @@ export const teeProducts = [
     colors: ["black", "white", "red", "purple", "blue", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
+    tags: ["Highest Quality"], 
     featured: false,
   },
 ];
