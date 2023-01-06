@@ -101,7 +101,7 @@ export const sweaterProducts = [
     ],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
-    tahs: ["Seller", "Limited Edition"],
+    tags: ["Seller", "Limited Edition"],
     featured: true,
   },
   {

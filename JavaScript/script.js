@@ -1,3 +1,5 @@
+import { sweaterProducts } from "../constants/sweaterProducts.js";
+import { teeProducts } from "../constants/teeProducts.js";
 //variables
 const skip = document.querySelector(".skip");
 const sec1 = document.querySelector(".sec-1");
@@ -27,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (visited) {
     killSec1();
   } else {
-  	return
+    return;
   }
 });
 
@@ -54,30 +56,30 @@ class Display {
 
 const check = () => {
   if (count === 1) {
-    headingOff = new Display(h1).off();
+    new Display(h1).off();
     setTimeout(() => {
-      headingOn = new Display(h2).on();
+      new Display(h2).on();
     }, 1000);
   }
   if (count === 2) {
-    headingOff = new Display(h2).off();
+    new Display(h2).off();
     setTimeout(() => {
-      headingOn = new Display(h3).on();
+      new Display(h3).on();
     }, 1000);
   }
   if (count === 3) {
-    killSkip = new Display(skip).off();
-    headingOff = new Display(h3).off();
+    new Display(skip).off();
+    new Display(h3).off();
     setTimeout(() => {
-      secOff = new Display(sec1).displayOff();
-      secOn = new Display(sec2).displayOn();
+      new Display(sec1).displayOff();
+      new Display(sec2).displayOn();
       setTimeout(() => {
-        secOn = new Display(sec2).on();
-        killSkip = new Display(skip).displayOff();
+        new Display(sec2).on();
+        new Display(skip).displayOff();
         navDots[0].style.backgroundColor = "#fc354c";
-        navDots.forEach((dot) => (showIcons = new Display(dot).on()));
-        showRight = new Display(rightBtn).on();
-        showLeft = new Display(leftBtn).on();
+        navDots.forEach((dot) => new Display(dot).on());
+        new Display(rightBtn).on();
+        new Display(leftBtn).on();
       }, 250);
     }, 1000);
   }
@@ -93,21 +95,19 @@ const killSec1 = () => {
   clearInterval(time);
   const secArray = [sec2, sec3, sec4];
   navDots[0].style.backgroundColor = "#fc354c";
-  navDots.forEach((dot) => (showIcons = new Display(dot).on()));
-  showRight = new Display(rightBtn).on();
-  showLeft = new Display(leftBtn).on();
-  disappear = new Display(sec1).displayOff();
-  killSkip = new Display(skip).displayOff();
+  navDots.forEach((dot) => new Display(dot).on());
+  new Display(rightBtn).on();
+  new Display(leftBtn).on();
+  new Display(sec1).displayOff();
+  new Display(skip).displayOff();
   showNextSec(secArray);
 };
 
 const resetStyle = (secArray) => {
   navDots.forEach((dot) => (dot.style.backgroundColor = "#fff"));
-  secArray.forEach((section) => (allSecs = new Display(section).off()));
+  secArray.forEach((section) => new Display(section).off());
   setTimeout(() => {
-    secArray.forEach(
-      (section) => (allSecs = new Display(section).displayOff())
-    );
+    secArray.forEach((section) => new Display(section).displayOff());
   }, 750);
 };
 
@@ -115,9 +115,9 @@ const showNextSec = () => {
   const secArray = [sec2, sec3, sec4];
   resetStyle(secArray);
   setTimeout(() => {
-    flippedTo = new Display(secArray[navCount]).displayOn();
+    new Display(secArray[navCount]).displayOn();
     setTimeout(() => {
-      showFlippedTo = new Display(secArray[navCount]).on();
+      new Display(secArray[navCount]).on();
       navDots[navCount].style.backgroundColor = "#fc354c";
     }, 50);
   }, 750);
@@ -155,6 +155,26 @@ const indicate = () => {
   indicator.innerHTML = products.length;
 };
 
+const sortAllItems = (e) => {
+  const sweaterArr = [];
+  const teeArr = [];
+  const title = e.target.querySelector("h3").innerHTML;
+  sweaterProducts.forEach((item) => {
+    item.tags.includes(title) ? sweaterArr.push(item) : null;
+  });
+  teeProducts.forEach((item) => {
+    item.tags.includes(title) ? teeArr.push(item) : null;
+  });
+  const allProducts = sweaterArr.concat(teeArr);
+  allProducts.length < 1
+    ? (window.location.href = "http://127.0.0.1:5500/HTML/tees.html")
+    : createElements(allProducts);
+};
+
+const createElements = (filteredProducts) => {
+    //remove cards and add new cards of filtered products with a back button to replace filtered products with original cards
+};
+
 showProducts();
 
 //event listeners
@@ -172,6 +192,9 @@ navDots.forEach((dot, index) => {
     navCount = index;
     showNextSec();
   });
+});
+cards.forEach((card) => {
+  card.addEventListener("click", sortAllItems);
 });
 
 localStorage.setItem("has visited", "true");

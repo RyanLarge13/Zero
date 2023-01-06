@@ -200,6 +200,7 @@ main i:hover {
   opacity: 0;
   transform: translateY(5em);
   transition: 250ms ease-in-out;
+  pointer-events: none;
 }
 
 .card::after {

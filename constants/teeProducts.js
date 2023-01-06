@@ -18,7 +18,7 @@ export const teeProducts = [
     colors: ["black", "white"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
-    tag: ["Best Price"],
+    tags: ["Best Price"],
     featured: false,
   },
   {
