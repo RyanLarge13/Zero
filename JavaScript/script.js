@@ -172,8 +172,20 @@ const sortAllItems = (e) => {
 };
 
 const createElements = (filteredProducts) => {
-    //remove cards and add new cards of filtered products with a back button to replace filtered products with original cards
+  console.log(filteredProducts);
+  const parent = document.querySelector(".grid");
+  const children = parent.querySelectorAll(".card");
+  children.forEach((child) => child.remove());
+  filteredProducts.forEach((item) => {
+    const newItem = document.createElement("div");
+    newItem.className = "card";
+    newItem.innerHTML = `<h3>${item.title}</h3>`;
+    append(item, parent);
+  });
+  //remove cards and add new cards of filtered products with a back button to replace filtered products with original cards
 };
+
+const append = (item, parent) => parent.appendChild(item);
 
 showProducts();
 
