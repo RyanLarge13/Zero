@@ -145,7 +145,7 @@ const checkOut = (e) => {
     shade.style.opacity = "1";
   } else {
     const elems = document.querySelectorAll(".price");
-    const quantities = document.querySelectorAll('.quantity');
+    const quantities = document.querySelectorAll(".quantity");
     let priceArray = [];
     let quantityArray = [];
     elems.forEach((elem) => {
@@ -158,11 +158,12 @@ const checkOut = (e) => {
       }
     });
     quantities.forEach((amount) => {
-      const newProduct = amount.parentElement.parentElement.children[0].innerHTML;
+      const newProduct =
+        amount.parentElement.parentElement.children[0].innerHTML;
       quantityArray.push(`${newProduct} ${Number(amount.innerHTML)}`);
     });
     quantityArray.forEach((item) => {
-      const itemToRemove = item.split(' ').splice(0, 2).join(' ');
+      const itemToRemove = item.split(" ").splice(0, 2).join(" ");
       localStorage.removeItem(itemToRemove);
       localStorage.setItem(item, "product");
     });
