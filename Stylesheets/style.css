@@ -169,10 +169,26 @@ main i:hover {
   opacity: 0;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .card-list {
   display: none;
+}
+
+.grid-back {
+  position: absolute;
+  top: 10%;
+  left: 10px;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-back i {
+  opacity: 0;
 }
 
 .grid {

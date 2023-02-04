@@ -172,20 +172,30 @@ const sortAllItems = (e) => {
 };
 
 const createElements = (filteredProducts) => {
-  console.log(filteredProducts);
   const parent = document.querySelector(".grid");
   const children = parent.querySelectorAll(".card");
+  const backBtn = document.querySelector(".grid-back i");
   children.forEach((child) => child.remove());
   filteredProducts.forEach((item) => {
     const newItem = document.createElement("div");
     newItem.className = "card";
     newItem.innerHTML = `<h3>${item.title}</h3>`;
-    append(item, parent);
+    append(newItem, parent);
   });
+  backBtn.style.opacity = "1";
   //remove cards and add new cards of filtered products with a back button to replace filtered products with original cards
+  backBtn.addEventListener("click", () => revertItems(children, parent));
 };
 
 const append = (item, parent) => parent.appendChild(item);
+
+const revertItems = (initialChildren, parent) => {
+  const currentItems = document.querySelectorAll(".card");
+  const backBtn = document.querySelector(".grid-back i");
+  backBtn.style.opacity = "0"
+  currentItems.forEach((item) => item.remove());
+  initialChildren.forEach((child) => parent.appendChild(child));
+};
 
 showProducts();
 

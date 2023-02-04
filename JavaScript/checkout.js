@@ -7,9 +7,16 @@ for (let k = 0; k < localStorage.length; k++) {
 }
 
 const spliceProducts = () => {
-    products.forEach((item) => {
-        const quantity = item.split(' ').splice(2).join();
-        const product = item.split(' ').splice(0, 2).join(' ');
-    });
+  products.forEach((item) => {
+    const quantity = item.split(" ").splice(2).join();
+    const product = item.split(" ").splice(0, 2).join(" ");
+  });
+  showInfo();
 };
-spliceProducts()
+
+const showInfo = () => {
+  const totalPrice = localStorage.getItem("totalPrice");
+  document.querySelector(".total").innerHTML = totalPrice;
+};
+
+spliceProducts();
