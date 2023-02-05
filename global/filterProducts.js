@@ -1,11 +1,12 @@
 import { teeProducts } from "../constants/teeProducts.js";
 import { sweaterProducts } from "../constants/sweaterProducts.js";
-import {add, view} from '../JavaScript/tees.js'
+import { add, view } from "../JavaScript/tees.js";
 
 const options = document.querySelectorAll("aside ul li ul li");
-const filteredArray = [];
+let filteredArray = [];
 
 const filter = (e) => {
+  filteredArray = [];
   const option = e.target.innerHTML.toLowerCase();
   const allTees = Array.from(teeProducts);
   for (let i = 0; i < allTees.length; i++) {
@@ -16,6 +17,9 @@ const filter = (e) => {
       filteredArray.push(allTees[i].title);
     }
     if (allTees[i].colors.includes(option)) {
+      filteredArray.push(allTees[i].title);
+    }
+    if (allTees[i].priceDesc.includes(option)) {
       filteredArray.push(allTees[i].title);
     }
     removeAndReplace();

@@ -8,6 +8,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Limited Edition", "Most Popular", "Seller", "Highest Quality"],
+    priceDesc: "high",
     featured: true,
   },
   {
@@ -19,6 +20,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Best Price"],
+    priceDesc: "mid",
     featured: false,
   },
   {
@@ -30,6 +32,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Best Price", "Seller"],
+    priceDesc: "mid",
     featured: false,
   },
   {
@@ -41,6 +44,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Best Price", "Seller", "Most Popular"],
+    priceDesc: "low",
     featured: false,
   },
   {
@@ -52,6 +56,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Best Price"],
+    priceDesc: "low",
     featured: false,
   },
   {
@@ -73,6 +78,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Seller", "Limited Edition", "Most Popular"],
+    priceDesc: "mid",
     featured: true,
   },
   {
@@ -94,6 +100,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: [],
+    priceDesc: "high",
     featured: true,
   },
   {
@@ -115,6 +122,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Limited Edition"],
+    priceDesc: "low",
     featured: true,
   },
   {
@@ -136,6 +144,7 @@ export const teeProducts = [
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
     tags: ["Limited Edition", "Seller", "Most Popular"],
+    priceDesc: "mid",
     featured: true,
   },
   {
@@ -146,7 +155,8 @@ export const teeProducts = [
     colors: ["black", "white", "red", "purple", "blue", "pink"],
     sizes: ["xs", "s", "md", "lrg", "xlrg", "xxlrg"],
     genders: ["male", "female"],
-    tags: ["Highest Quality"], 
+    tags: ["Highest Quality"],
+    priceDesc: "high",
     featured: false,
   },
 ];

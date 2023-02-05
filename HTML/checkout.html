@@ -49,7 +49,17 @@
 
       </div>
     </div>
-    <button class="buy">Complete Purchase</button>
+    <form>
+      <label for="name">Name On Card</label>
+      <input type="text" name="name" id="name" placeholder="John Doe" autocomplete="true" autofocus="true">
+      <label for="cardnumber">Card Number</label>
+      <input type="text" name="cardnumber" id="cardnumber" placeholder="1234-5678-9100" autocomplete="true">
+      <label for="expiration">Expires In</label>
+      <input type="text" name="expiration" id="expiration" placeholder="expires in">
+      <label for="cvc">cvc</label>
+      <input type="text" aria-multiline="cvc" id="cvc" placeholder="123">
+    </form>
+    <a href="thankyou.html"><button>Complete Purchase</button></a>
   </main>
 
   <footer>

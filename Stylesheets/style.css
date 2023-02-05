@@ -23,12 +23,8 @@
   color: #fff;
 }
 
-.sec-1 h2 {
-  opacity: 0;
-  color: #fff;
-}
-
-.sec-1 h3 {
+.sec-1 h2,
+h3 {
   opacity: 0;
   color: #fff;
 }
@@ -58,7 +54,7 @@
 
 .text-content p {
   display: block;
-  margin: 1em 0;
+  margin: 1em 0 2em 0;
   width: 75%;
   color: white;
 }
@@ -178,7 +174,7 @@ main i:hover {
 
 .grid-back {
   position: absolute;
-  top: 10%;
+  top: 100px;
   left: 10px;
   color: #fff;
   padding: 1em;
@@ -192,12 +188,19 @@ main i:hover {
 }
 
 .grid {
+  padding: 1em 0;
   width: 50vw;
-  height: 60vh;
+  max-height: 70vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  gap: 1em;
+  overflow-y: auto;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
@@ -205,8 +208,10 @@ main i:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
-  width: 90%;
+  height: 200px;
+  width: 200px;
+  min-height: 200px;
+  min-width: 200px;
   border-radius: 0.5em;
   transition: 250ms ease-in-out;
 }
@@ -293,26 +298,11 @@ main i:hover {
   background-size: cover;
   box-shadow: 0 0 0.75em 0 #fff;
   transition: 250ms ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: forward;
-}
-
-@keyframes move {
-  50% {
-    transform: translateY(0.5em) translateX(0.5em);
-  }
-  75% {
-    transform: translateX(-0.5em);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .bubble:hover {
   cursor: pointer;
   transform: scale(1.05);
-  animation-play-state: paused;
 }
 
 .bubble1 {
@@ -321,8 +311,6 @@ main i:hover {
   height: 40px;
   right: 10%;
   top: 20%;
-  animation-name: move;
-  animation-duration: 2.5s;
 }
 .bubble2 {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIkSPlRGoB16Kb-9q3l0H0swTq307DbN2je3xgqV_pFsuvPilZ4NdbLiQ6jUGvjBVDjJs&usqp=CAU);
@@ -330,8 +318,6 @@ main i:hover {
   height: 60px;
   right: 20%;
   top: 30%;
-  animation-name: move;
-  animation-duration: 3.25s;
 }
 .bubble3 {
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/557/421/original/tiktok-logo-black-mobile-social-media-icon-free-vector.jpg);
@@ -339,8 +325,6 @@ main i:hover {
   height: 50px;
   right: 15%;
   top: 75%;
-  animation-name: move;
-  animation-duration: 2.25s;
 }
 .bubble4 {
   background-color: #fff;
@@ -349,8 +333,6 @@ main i:hover {
   height: 40px;
   left: 10%;
   top: 20%;
-  animation-name: move;
-  animation-duration: 2.75s;
 }
 .bubble5 {
   background-color: #fff;
@@ -359,8 +341,6 @@ main i:hover {
   height: 60px;
   left: 20%;
   top: 30%;
-  animation-name: move;
-  animation-duration: 2s;
 }
 .bubble6 {
   background-color: #fff;
@@ -369,8 +349,6 @@ main i:hover {
   height: 50px;
   left: 15%;
   top: 75%;
-  animation-name: move;
-  animation-duration: 3s;
 }
 
 @media (min-width: 300px) and (max-width: 900px) {
@@ -444,7 +422,6 @@ main i:hover {
 
   .bubble {
     scale: 0.75;
-    animation-name: none;
   }
 
   .dot {
