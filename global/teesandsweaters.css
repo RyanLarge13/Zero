@@ -255,8 +255,11 @@ aside ul li ul li:hover {
   }
 
   .grid {
-    margin-top: 15%;
-    grid-template-columns: 1fr;
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .title {
@@ -270,6 +273,11 @@ aside ul li ul li:hover {
 
   .card {
     height: 30vh;
+    min-width: 200px;
+  }
+
+  .card:last-child {
+    margin-bottom: 50%;
   }
 
   .foot {
