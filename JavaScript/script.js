@@ -159,6 +159,8 @@ const sortAllItems = (e) => {
   const sweaterArr = [];
   const teeArr = [];
   const title = e.target.querySelector("h3").innerHTML;
+  document.querySelector(".products-title").innerHTML =
+    title;
   sweaterProducts.forEach((item) => {
     item.tags.includes(title) ? sweaterArr.push(item) : null;
   });
@@ -190,9 +192,10 @@ const createElements = (filteredProducts) => {
 const append = (item, parent) => parent.appendChild(item);
 
 const revertItems = (initialChildren, parent) => {
+  document.querySelector(".products-title").innerHTML = "";
   const currentItems = document.querySelectorAll(".card");
   const backBtn = document.querySelector(".grid-back i");
-  backBtn.style.opacity = "0"
+  backBtn.style.opacity = "0";
   currentItems.forEach((item) => item.remove());
   initialChildren.forEach((child) => parent.appendChild(child));
 };

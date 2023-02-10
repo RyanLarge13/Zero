@@ -22,6 +22,7 @@ const spliceProducts = () => {
 const createProduct = (quantity, product) => {
   const parent = document.querySelector(".mini-product-container");
   const miniProduct = document.createElement("div");
+  miniProduct.className = "mini-product"
   miniProduct.innerHTML = `<div>
   <h2>${product}</h2>
   <p>${quantity}</p>
@@ -31,7 +32,7 @@ const createProduct = (quantity, product) => {
 
 const showInfo = () => {
   const totalPrice = localStorage.getItem("totalPrice");
-  document.querySelector(".total").innerHTML = totalPrice;
+  document.querySelector(".total").innerHTML = `total: $${totalPrice}`;
 };
 
 spliceProducts();

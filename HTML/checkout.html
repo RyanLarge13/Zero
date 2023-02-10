@@ -1,78 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../Images/zero-logo-transparent.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../global/global.css" />
+    <link rel="stylesheet" href="../Stylesheets/checkout.css" />
+    <script defer src="../global/global.js"></script>
+    <script defer type="module" src="../JavaScript/checkout.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/a673862905.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Zero</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="../Images/zero-logo-transparent.png" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../global/global.css" />
-  <link rel="stylesheet" href="../Stylesheets/checkout.css" />
-  <script defer src="../global/global.js"></script>
-  <script defer type="module" src="../JavaScript/checkout.js"></script>
-  <script defer src="https://kit.fontawesome.com/a673862905.js" crossorigin="anonymous"></script>
-  <title>Zero</title>
-</head>
+  <body>
+    <header>
+      <!-- <p>Zero</p> -->
+      <a class="logo" href="../index.html"
+        ><img src="../Images/zero-logo-transparent.png" alt="Zero logo"
+      /></a>
 
-<body>
-  <header>
-    <!-- <p>Zero</p> -->
-    <a class="logo" href="../index.html"><img src="../Images/zero-logo-transparent.png" alt="Zero logo" /></a>
-
-    <div class="toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a class="home" href="tees.html">Tee's</a></li>
-        <li><a href="sweaters.html">Sweaters</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <div class="cart">
-          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          <div class="indicator"></div>
-        </div>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="checkout">
-    <div class="info">
-      <p class="total"></p>
-      <div class="mini-product-container">
-
+      <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </div>
-    <form>
-      <label for="name">Name On Card</label>
-      <input type="text" name="name" id="name" placeholder="John Doe" autocomplete="true" autofocus="true">
-      <label for="cardnumber">Card Number</label>
-      <input type="text" name="cardnumber" id="cardnumber" placeholder="1234-5678-9100" autocomplete="true">
-      <label for="expiration">Expires In</label>
-      <input type="text" name="expiration" id="expiration" placeholder="expires in">
-      <label for="cvc">cvc</label>
-      <input type="text" aria-multiline="cvc" id="cvc" placeholder="123">
-    </form>
-    <a href="thankyou.html"><button>Complete Purchase</button></a>
-  </main>
 
-  <footer>
-    <div class="social">
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-snapchat"></i>
-      <i class="fa-brands fa-twitch"></i>
-    </div>
-    <div class="license">
-      <p>Avery Bradley</p>
-      <p>@all rights reserved</p>
-    </div>
-  </footer>
-</body>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a class="home" href="tees.html">Tee's</a></li>
+          <li><a href="sweaters.html">Sweaters</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <div class="cart">
+            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="indicator"></div>
+          </div>
+        </ul>
+      </nav>
+    </header>
 
+    <main class="checkout">
+      <div class="info">
+        <div class="mini-product-container"></div>
+        <p class="total"></p>
+      </div>
+      <form>
+        <label for="name">Name On Card</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="John Doe"
+          autocomplete="true"
+          autofocus="true"
+        />
+        <label for="cardnumber">Card Number</label>
+        <input
+          type="text"
+          name="cardnumber"
+          id="cardnumber"
+          placeholder="1234-5678-9100"
+          autocomplete="true"
+        />
+        <label for="expiration">Expires In</label>
+        <input
+          type="text"
+          name="expiration"
+          id="expiration"
+          placeholder="expires in"
+        />
+        <label for="cvc">cvc</label>
+        <input type="text" aria-multiline="cvc" id="cvc" placeholder="123" />
+        <a href="thankyou.html"><button type="button">Complete Purchase</button></a>
+      </form>
+    </main>
+
+    <footer>
+      <div class="social">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-snapchat"></i>
+        <i class="fa-brands fa-twitch"></i>
+      </div>
+      <div class="license">
+        <p>Avery Bradley</p>
+        <p>@all rights reserved</p>
+      </div>
+    </footer>
+  </body>
 </html>
