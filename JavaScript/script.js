@@ -159,8 +159,7 @@ const sortAllItems = (e) => {
   const sweaterArr = [];
   const teeArr = [];
   const title = e.target.querySelector("h3").innerHTML;
-  document.querySelector(".products-title").innerHTML =
-    title;
+  document.querySelector(".products-title").innerHTML = title;
   sweaterProducts.forEach((item) => {
     item.tags.includes(title) ? sweaterArr.push(item) : null;
   });
@@ -174,30 +173,49 @@ const sortAllItems = (e) => {
 };
 
 const createElements = (filteredProducts) => {
+  cards.forEach((card) => new Display(card).off());
   const parent = document.querySelector(".grid");
   const children = parent.querySelectorAll(".card");
   const backBtn = document.querySelector(".grid-back i");
-  children.forEach((child) => child.remove());
-  filteredProducts.forEach((item) => {
-    const newItem = document.createElement("div");
-    newItem.className = "card";
-    newItem.innerHTML = `<h3>${item.title}</h3>`;
-    append(newItem, parent);
-  });
+  setTimeout(() => {
+    children.forEach((child) => child.remove());
+    filteredProducts.forEach((item) => {
+      const newItem = document.createElement("div");
+      newItem.className = "card";
+      newItem.innerHTML = `<h3>${item.title}</h3>`;
+      newItem.style.opacity = 0;
+      append(newItem, parent);
+    });
+  }, 250);
   backBtn.style.opacity = "1";
   //remove cards and add new cards of filtered products with a back button to replace filtered products with original cards
   backBtn.addEventListener("click", () => revertItems(children, parent));
 };
 
-const append = (item, parent) => parent.appendChild(item);
+const append = (item, parent) => {
+  parent.appendChild(item);
+  setTimeout(() => {
+    return new Display(item).on();
+  }, 250);
+};
 
 const revertItems = (initialChildren, parent) => {
   document.querySelector(".products-title").innerHTML = "";
   const currentItems = document.querySelectorAll(".card");
   const backBtn = document.querySelector(".grid-back i");
   backBtn.style.opacity = "0";
-  currentItems.forEach((item) => item.remove());
-  initialChildren.forEach((child) => parent.appendChild(child));
+  currentItems.forEach((item) => {
+    new Display(item).off();
+    setTimeout(() => {
+      item.remove();
+    }, 250);
+  });
+  initialChildren.forEach((child) => {
+    parent.appendChild(child);
+    setTimeout(() => {
+      return new Display(child).on();
+    }, 250);
+  });
 };
 
 showProducts();
