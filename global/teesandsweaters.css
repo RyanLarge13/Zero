@@ -76,7 +76,7 @@ h1 {
 
 aside {
   position: fixed;
-  top: 0;
+  top: 5%;
   left: 0;
   bottom: 0;
   padding: 5% 1em;
@@ -129,12 +129,14 @@ aside ul li ul li:hover {
   justify-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 5em 0;
+  overflow-y: hidden;
+  margin-left: 5em;
 }
 
 .card {
   position: relative;
-  width: 80%;
-  height: 100%;
+  width: 75%;
+  height: 700px;
   transition: 250ms ease-in-out;
   overflow: hidden;
 }
